@@ -1,0 +1,28 @@
+﻿Algorithme. Jeu de du 0-2
+
+	ScoreMax := entier
+	
+	player :=  entier
+	computer := entier
+	diff := entier
+	
+
+
+	// Traitement 
+
+
+		nbOrdinateur <- Random(0 ,3)
+		scoreMax <- 10
+		scoreMin <- 0
+		diff = Math.ads(player - computer)
+
+		Faire 
+			
+				Faire
+					Ecrire "Veuillez saisir un nombre entre 1 et "
+					Lire player
+				Tant que !inputOK && player <= 2
+		
+		Tant que ScoreMax != player && ScroreMax != computer faire
+
+			

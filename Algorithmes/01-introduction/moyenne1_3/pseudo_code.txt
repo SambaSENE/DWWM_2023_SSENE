@@ -1,0 +1,27 @@
+﻿Algorithmes calcul de la moyenne de nombre
+
+Variables :
+		
+		Nb1 est un entier
+		Nb2 est un entier
+		moyenne est un entier
+
+Traitement
+		Ecrire "Bienvenue dans le programme de calcul de moyenne "
+
+		Ecrire "Veuillez saisir le premier nombre"
+		Lire Nb1
+		Ecrire "Veuillez saisir le second nombre"
+		Lire Nb2
+
+		moyenne <-- (Nb1 + Nb2) / 2.0
+		
+		Ecrire "La moyenne de " ,nb1,"et" , nb2 , "est", moyenne;
+
+		Ecrire "fin de programme****;
+
+	
+
+
+
+fin de programme

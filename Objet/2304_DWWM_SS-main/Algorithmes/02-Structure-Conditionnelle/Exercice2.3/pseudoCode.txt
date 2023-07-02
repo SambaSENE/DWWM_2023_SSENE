@@ -1,0 +1,36 @@
+﻿Algorithme : ma retraite
+
+		Variables :
+			Age est un entier
+			AgeFixeRetraite est une constant
+			NbAnneeReste est un entier
+
+			enRetraite est un booleen
+
+
+		Traitement
+			AgeFixeRetarite <-- 60
+			enRetraite <-- faux
+
+
+			Ecrire "Veuillez saisir votre âge"
+			Lire Age
+
+			Si Age < AgeFixeRetraite alors
+				enRetraite <-- faux
+				nbAnneeReste <-- AgeFixeRetraite - Age
+			Sinon 
+				si Age >= AgeFixeRetraite alors
+					enRetraite <-- vrai
+					nbAnneeReste <-- AgeFixeRetraite - Age
+				finSi
+			
+		Affichage
+				
+				Si enRetraite = vrai alors
+					Ecrire "Vous etes à la retraite depuis ", nbAnneeReste , " annees"
+				sinon
+					si enRetraite = faux alors
+						Ecrire "Vous n'etes pas encore à la retraite , il vous reste ", nbAnneeReste , " années"
+				Finsi
+						

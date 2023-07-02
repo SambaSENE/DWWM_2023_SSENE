@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{59770A3B-8455-4B49-97C6-108A4E11A284}|Default">
+  <DisabledProjects>
+    <String>ConsoleAppBouteille/ConsoleAppBouteille.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.TestUnitBouteille PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TestUnitBouteille/UnitTest1.cs">
+    <Files>
+      <File FileName="ClassLibraryBoutielle/Bouteille.cs" Line="12" Column="62" />
+      <File FileName="TestUnitBouteille/UnitTest1.cs" Line="91" Column="47" NotebookId="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ConsoleAppBouteille" expanded="True">
+            <Node name="ClassLibraryBoutielle" expanded="True" />
+            <Node name="TestUnitBouteille" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="ConsoleAppBouteille" expanded="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+</Properties>

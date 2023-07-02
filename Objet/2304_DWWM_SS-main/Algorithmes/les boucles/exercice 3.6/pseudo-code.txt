@@ -1,0 +1,25 @@
+algorithme : jeux de la fourchette
+
+Variables :
+
+nombreMystere = RANDOM(0,100)
+nombreEssais = 0
+saisirNombre():
+    Ecrire ("Entrez un nombre entre 0 et 100 : ")
+    LIRE nombrePropose
+    RETOURNER nombrePropose
+
+TANT_QUE(True):
+    nombreEssais += 1
+    nombrePropose = saisirNombre()
+    SI nombrePropose < nombreMystere ALORS
+       Ecrire("Le nombre mystère est plus grand.")
+    SINON SI nombrePropose > nombreMystere ALORS
+       Ecrire("Le nombre mystère est plus petit.")
+    SINON:
+       Ecrire("Bravo vous avez trouvé en " + nombreEssais + " essais.")
+      Fin TANT_QUE
+
+
+
+

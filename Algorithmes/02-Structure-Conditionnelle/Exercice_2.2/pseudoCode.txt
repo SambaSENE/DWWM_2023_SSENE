@@ -1,0 +1,29 @@
+﻿Algorithme : Est-tu majeur?
+
+	Variables : 
+			A est un entier
+			mineur est booleen
+
+	Traitement
+		Ecrire "Veuillez saisir votre age"
+		Lire A
+		mineur <-- true
+
+			Si A  > 0 OU A < 12 alors
+				mineur <-- vrai
+			sinon
+				mineur <-- faux
+			Finsi
+
+	Affichage
+			
+			Si mineur <-- vrai alors
+				Ecrire "Vous êtes mineur"
+				
+				Sinon
+					Si  mineur <-- faux alors
+
+						Ecrire "Vous êtes majeur"
+			Sinon
+				Ecrire "Vous êtes pas encore né"
+			FinSi

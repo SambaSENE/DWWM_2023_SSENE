@@ -1,0 +1,12 @@
+/Users/ssene/Documents/DWWM_2304_SS/ConsoleAppBouteille/ClassLibraryBoutielle/bin/Debug/net6.0/ClassLibraryBoutielle.deps.json
+/Users/ssene/Documents/DWWM_2304_SS/ConsoleAppBouteille/ClassLibraryBoutielle/bin/Debug/net6.0/ClassLibraryBoutielle.dll
+/Users/ssene/Documents/DWWM_2304_SS/ConsoleAppBouteille/ClassLibraryBoutielle/bin/Debug/net6.0/ClassLibraryBoutielle.pdb
+/Users/ssene/Documents/DWWM_2304_SS/ConsoleAppBouteille/ClassLibraryBoutielle/obj/Debug/net6.0/ClassLibraryBoutielle.csproj.AssemblyReference.cache
+/Users/ssene/Documents/DWWM_2304_SS/ConsoleAppBouteille/ClassLibraryBoutielle/obj/Debug/net6.0/ClassLibraryBoutielle.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ssene/Documents/DWWM_2304_SS/ConsoleAppBouteille/ClassLibraryBoutielle/obj/Debug/net6.0/ClassLibraryBoutielle.AssemblyInfoInputs.cache
+/Users/ssene/Documents/DWWM_2304_SS/ConsoleAppBouteille/ClassLibraryBoutielle/obj/Debug/net6.0/ClassLibraryBoutielle.AssemblyInfo.cs
+/Users/ssene/Documents/DWWM_2304_SS/ConsoleAppBouteille/ClassLibraryBoutielle/obj/Debug/net6.0/ClassLibraryBoutielle.csproj.CoreCompileInputs.cache
+/Users/ssene/Documents/DWWM_2304_SS/ConsoleAppBouteille/ClassLibraryBoutielle/obj/Debug/net6.0/ClassLibraryBoutielle.dll
+/Users/ssene/Documents/DWWM_2304_SS/ConsoleAppBouteille/ClassLibraryBoutielle/obj/Debug/net6.0/refint/ClassLibraryBoutielle.dll
+/Users/ssene/Documents/DWWM_2304_SS/ConsoleAppBouteille/ClassLibraryBoutielle/obj/Debug/net6.0/ClassLibraryBoutielle.pdb
+/Users/ssene/Documents/DWWM_2304_SS/ConsoleAppBouteille/ClassLibraryBoutielle/obj/Debug/net6.0/ref/ClassLibraryBoutielle.dll

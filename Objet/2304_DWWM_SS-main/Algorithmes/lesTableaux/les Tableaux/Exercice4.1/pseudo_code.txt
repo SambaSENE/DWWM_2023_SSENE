@@ -1,0 +1,30 @@
+﻿Algorithme :  Recherche un nombre dans le tableau
+
+Varaibles :
+
+		array est un entier
+		
+		
+
+Traitement : 
+			
+		array = new entier {8 , 16 , 32 ,64 , 128 , 256 , 512}
+		
+		Pour entier a = 0; a < array.taille ; a++
+			entier indiceJ = a
+
+			Pour entier j = a +1 ; j < array.length; j++
+				si array[a] < array[indiceJ]
+					indiceJ = j
+				fin Si
+			fin Pour
+			entier temp = array[indiceJ]
+			array[indiceJ] = array[a]
+			array[a] = temp
+
+			Ecrire array[a] + " "
+		Fin Pour
+
+		
+
+Fin Traitement

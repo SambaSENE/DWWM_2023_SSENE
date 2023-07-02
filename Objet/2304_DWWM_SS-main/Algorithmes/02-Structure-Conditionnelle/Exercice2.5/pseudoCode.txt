@@ -1,0 +1,70 @@
+﻿Algorithme :Bicyclette
+
+
+	Variables :
+
+		beauTemps est un booleen
+        veloEnBonEtat est un booleen
+        baladeEnVelo est un booleen
+        veloBesoinReparation est un booleen
+        peutReparerVeloImm est un booleen
+
+
+
+// Traitement
+
+		beauTemps = false
+        veloEnBonEtat = false
+        baladeEnVelo = false
+        veloBesoinReparation = false
+        peutReparerVeloImm = false
+
+Ecrire "Est-ce qu'il fera beau demain ? (O pour oui, N pour non)"
+Lire saisie
+
+Si saisie == "O" Alors
+    beauTemps <-- true
+    Afficher "Est-ce que votre vélo est en bon état ? (O pour oui, N pour non)"
+    saisie = Lire()
+    Si saisie == "O" Alors
+        veloEnBonEtat <-- true
+        baladeEnVelo <-- true
+    Sinon
+        veloBesoinReparation <-- true
+    Fin Si
+
+    Si veloBesoinReparation Alors
+        Ecrire "Est-ce que les réparations doivent être effectuées immédiatement ? O pour oui, N pour non"
+         Lire saisie
+        Si saisie == "O" Alors
+            peutReparerVeloImm <-- true
+            baladeEnVelo <-- true
+        Fin Si
+    Fin Si
+
+Sinon
+    Si saisie == "N" Alors
+        Ecrire "Je consacrerai ma journée à la lecture"
+        livre <-- "Game of Thrones - Tome 1"
+        Si livre est dans la bibliothèque du salon Alors
+            Ecrire "Je prendrai le livre dans la bibliothèque"
+    Sinon
+        Ecrire Je vais à la bibliothèque municipale"
+        Si livre est disponible à la bibliothèque Alors
+            Ecrire "Je prendrai le livre à la bibliothèque"
+        Sinon
+            Ecrire "Je prendrai un roman policier"
+            livre <-- "roman policier"
+        Fin Si
+    Fin Si
+Fin Si
+
+Si baladeEnVelo vrai Alors
+    Ecrire "Je peux faire une balade à bicyclette !"
+Sinon
+    Si livre != null Alors
+        Ecrire "Je m'installerai confortablement dans un fauteuil et je me plongerai dans la lecture de " + livre
+Fin Si
+			
+			Si veloEnBonEtat == vrai alors
+			

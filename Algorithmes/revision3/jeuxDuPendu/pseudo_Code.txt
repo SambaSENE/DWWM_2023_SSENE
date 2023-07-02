@@ -1,0 +1,72 @@
+﻿Algorithme: Jeux du pendu (Avec des fonctions)
+
+	Variables :
+			
+			lettreEssai := char
+			compteur :=  entier 
+			bonnRep :=  eniter
+			correct :=  booleen 
+			motSecret := string
+
+			procedure searchWord(chaine : mot ): string
+				inputOk := booleen
+				motSecret = mot
+				Debut:
+
+					Faire
+						Ecrire "Entrez le mot chercher"
+						lire motSecret
+
+						Pour entier de i allant de i  à |motSecret| , i++
+							Si i > 5
+								inputOk <- true
+							Fin Si
+						Fin  Pour
+					TantQue inputOK == faux
+
+					motSecret <- motSecret.initialiseLeMot()
+					retoune : motSecret
+				fin
+
+			fonction initaliseLeMot() : caractere
+				entier tailleMot = |motSecret|
+
+				Debut :
+					Pour i allant de i a |ailleMot| i++
+							motEssai[i] <- '-';
+					Fin Pour
+				retourne motEssai
+				
+				Fin
+
+			Fonction tourDejeu()
+				entier essai
+				Debut :
+					TantQue (compteur > 0) && (bonneRep != tailleMot)
+					
+						correct <- faux
+						Ecrire "Entrez l'essai" , (essai + 1) , ":"
+						Lire lettreEssai
+
+						Pour entier de i allant de 0 à tailleMot i+1
+							Si lettreEssai == motSecret[i] alors
+								motEssai[i] <- (lettreEssai).toString()
+								bonneRep <-bonneRep +1
+								correct <- true
+							Fin Si
+						Fin Pour
+						Pour entier de i allant de 0 à tailleMot i+1
+							Ecrire motEssai[i]
+						Fin Pour
+						Si correct == faux
+
+						compteur <- compter -1
+						essai++
+						Ecrire "Il vous reste" , compteur , "essai"
+
+						Si compteur > 0
+							Ecrire "Bravo!!! vous avez trouvez le mot"
+						Sinon
+							Ecrire "Perdu, vous êtes mort , le mot caché etait" , motSecret
+						Fin Si
+				Fin

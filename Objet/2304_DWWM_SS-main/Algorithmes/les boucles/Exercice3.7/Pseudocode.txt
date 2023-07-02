@@ -1,0 +1,25 @@
+﻿Algorithme : Barnabé fait ses courses
+
+
+Variables :
+
+somme_dispo : entier 
+nb_magasins : entier 
+depense : entier 
+solde : entier
+
+Tant que depense > 1 faire
+    depense <- (depense / 2) + 1
+    nb_magasins <- nb_magasins + 1
+Fin tant que
+
+solde <- somme_dispo
+Pour i allant de 1 à nb_magasins faire
+    solde <- solde - (solde / 2) - 1
+Fin pour
+
+Si solde = 0 alors
+    nb_magasins <- nb_magasins + 1
+Fin si
+
+Ecrire "Barnabé a fait ses courses dans ", nb_magasins, " magasins."

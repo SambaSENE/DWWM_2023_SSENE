@@ -1,0 +1,53 @@
+﻿Algorithme : Conversion kilometres en miles
+
+	
+Voici le pseudo-code correspondant à l'exercice :
+
+Variables :
+
+		nb : réel
+		km : réel
+		miles : réel
+		input : chaîne de caractères
+		inputOk : booléen
+		doConversion : booléen
+		conversion : booléen
+
+Traitement :
+
+		inputOk <- faux
+		conversion <- vrai
+
+		Répéter
+	
+			Ecrire "Veuillez saisir un nombre :"
+			Lire nb
+			Ecrire "Repondez par oui (O) ou par (N) pour le sens de la conversion :"
+			Lire input
+
+			Si input = "O" ou input = "" alors
+				doConversion <- vrai
+				inputOk <- vrai
+			Fin Si
+
+		Tant que (nb <= 0.01 OU nb >= 1000000) ET (input != "q" ET  !inputOk)
+
+			Si input = "q" alors
+				Ecrire "Programme terminé."
+			Sinon si NOT doConversion alors
+				miles <- nb / 0.62
+				conversion <- faux
+			Sinon
+				km <- nb * 0.62
+				conversion <- vrai
+			Fin Si
+		Affichage :
+
+		Si  !conversion alors
+			Ecrire nb, " sa valeur en miles = ", miles
+		Sinon
+			Ecrire nb, " sa valeur en km = ", km
+		Fin Si
+
+
+	Fin programme

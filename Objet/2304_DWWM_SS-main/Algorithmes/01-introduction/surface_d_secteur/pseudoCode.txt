@@ -1,0 +1,18 @@
+﻿Algorithme: surface d'un secteur circulaire 
+
+	R est un double
+	A est un double
+	aireSecteur est un double
+
+Traitement 
+	R <-- 8
+	A <-- 45
+		Ecrire "Bienvenue dans le programme qui calcule la surface d'un secteur circulaire"
+			
+			aireSecteur = (PI * R * R) / 360
+
+		Ecrire" La surface d'un secteur d'un circulaire" , aireSecteur
+
+
+
+Affichage

@@ -1,0 +1,25 @@
+﻿Algorithme : Calcul le nombre de jeunes 
+
+	Varaibles :  
+			agePersonnes est une Liste 
+			counter est un entier
+			ageNew est un entier
+			List<int> age = new List<int>
+	
+    	TantQue counter < 20
+				faire
+					Ecrire "Veuillez saisir l'age de la personne"
+					Lire ageNew
+					
+					Si inputOk == vrai alors
+						age.add(ageNew)
+					finSi
+
+				TantQue !inputOk
+
+				for
+					
+			counter++
+		fin TantQue 
+
+		

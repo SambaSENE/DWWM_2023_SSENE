@@ -1,0 +1,34 @@
+Algorithme : Intervalle entre 2 nombres
+
+	Variables : 
+				a est un entier
+				b est un  entier
+				i est un entier
+				input est un entier
+				inputOK est un booleen
+				
+			
+				
+	// Traitement
+		
+
+		Ecrire "Veuillez saisir la Valeur de A"
+		Lire a
+
+		Ecrire "Veuillez saisir la valeur de B"
+		lire b
+		Tant que a < b || a > b
+			Si a <b alors
+				pour i allant de a+1 à b 
+					 Ecrire i++
+				fin Pour
+			sinon
+				Pour i allant de b-1 à a
+				Ecrire	i--;
+			fin Si
+		fin Tant Que
+		
+			
+		
+
+	

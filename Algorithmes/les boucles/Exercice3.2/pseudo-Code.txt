@@ -1,0 +1,34 @@
+﻿Variables :
+     password est une chaîne de caractères
+     password_user est une chaîne de caractères
+     cptMax est un entier
+     cpt est un entier
+     saisie est un booléen
+     saisie_correct est un booléen
+
+Traitement :
+    password <-- "formation"
+    saisie <-- faux
+    cptMax <-- 3
+    cpt <-- 0
+
+    faire
+        Ecrire "Veuillez saisir votre mot de passe : "
+        Lire password_user
+
+        Si password != password_user alors
+            Ecrire "Saisie incorrecte"
+            cpt <-- cpt + 1
+        Sinon
+            Ecrire "Vous êtes connecté"
+            saisie_correct <-- vrai
+        Fin Si
+     Tant que saisie est faux et cpt < cptMax faire
+
+    Fin Tant que
+
+    Si saisie_correct est faux alors
+        Ecrire "Votre compte est bloqué"
+    Fin Si
+
+Fin Traitement

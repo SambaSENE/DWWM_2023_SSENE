@@ -1,0 +1,36 @@
+﻿Algorithme : Tri  de nombre
+
+	Variables :
+			
+			A est un entier
+			b est un entier
+			plusPetit est un booleen
+
+
+	Debut
+
+			Traitement
+				plusPetit <-- true
+
+				A <-- 8
+				B <-- 2
+
+				Si  B superieur A alors
+					plusPetit <-- faux
+				sinon 
+					plusPetit <-- vrai
+				FinSi
+
+
+			Affichage
+
+				Si plusPetit = vrai alors
+					Ecrire "La valeur de A = " , A , "Est plus petit que la valeur de B =" , B
+				Sinon
+					Si plusPetit = faux alors
+						Ecrire "La valeur de B = " , B , "Est plus petit que la valeur de A =" , A
+				Sinon
+					Ecrire "les deux valeurs sont égaux"
+				FinSi
+			Ecrire "Fin du programme"
+	Fin

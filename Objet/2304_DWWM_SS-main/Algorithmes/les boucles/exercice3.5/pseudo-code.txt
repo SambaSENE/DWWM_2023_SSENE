@@ -1,0 +1,34 @@
+﻿Algorithme : Nombre premier
+
+    number est un entier
+    bool isFirst
+    i est un entier
+
+// traitement
+
+    Ecrire "Veuillez saisir un nombre"
+    Lire number
+
+    Si number > 1
+            isFirst <-- vrai
+            Pour i allant 2 i < number et isFirst i+1
+                Si number % i == 0
+                    isFirst = faux
+                finSi
+            Fin Pour
+
+     Sinon
+        Ecrire number+" N'est pas un nombre premier"
+      fin Si
+
+// Affichage
+
+    Si isfirst == true alors
+
+        Ecrire number , "Est un nombre premier"
+    Sinon
+        Ecrire number , "n'est pas un nombre premier"
+    finSi
+
+
+

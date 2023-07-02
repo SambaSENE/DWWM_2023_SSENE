@@ -1,0 +1,22 @@
+Algorithme :  jeux de Zero Deux
+
+   Variables :
+        List<char> motSecret = new List<char>()
+        lettreEssai :=  caractere
+        cpt := entier
+        bonneResp := entier
+        correct := booleen
+        saisieOk := booleen
+
+
+        TantQue saisieOk
+            Ecrire "Entrez le mot à charcher (minimum 5 caracteres)"
+            chaine caractere motSaisi
+            Lire motsaisi
+
+            motSecret.effeaceLaconsole()
+
+            saisieOk = motSe 
+        Fin TantQue
+        
+        

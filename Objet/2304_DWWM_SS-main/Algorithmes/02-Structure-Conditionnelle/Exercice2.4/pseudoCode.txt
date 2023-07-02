@@ -1,0 +1,33 @@
+﻿Algorithme : Tri de nombres ++
+
+	A est un nombre entier
+	B est un nombre entier
+	C est un nombre entier
+
+	// Traitement
+			Ecrire: "Veuillez saisir un nombre"
+			Lire A
+			Ecrire: "Veuillez saisir un nombre"
+			Lire B
+			Ecrire: "Veuillez saisir un nombre"
+			Lire C
+
+		Si A > B et A > C  alors
+			Ecrire  A B C
+		SINON 
+			SI B > C ET B > A alors
+				Ecrire B C A
+			SI C > A et C > B alors
+				Ecrire C A B
+			SI A > C et A > B alors
+				Ecrire C B A
+			Si B > A et B > C alors
+				Ecrire B C A 
+			Si C > A et C > B alors
+				Ecrire C A B
+		finSi
+
+		
+
+	// Affichage
+

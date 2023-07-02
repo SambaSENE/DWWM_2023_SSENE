@@ -1,0 +1,38 @@
+﻿
+Algorithmes : Contrôle saisie
+
+    Variables :
+
+        recupeSaisie est un entier;
+        sasieOk est booleen;
+        saisie est une chaine caratere
+      
+
+    Traitement
+
+        recupeSaisie =  0;
+        sasieOk =  true;
+        saisie = ""
+
+        faire
+            Ecrire "Veuillez saisir un prenom"
+            lire prenom
+
+            pour i de prenom.taille i+1
+                recupSaisie = i
+            
+            FinPour
+           
+        si recupSaisie > 2 alors
+        
+            saisieOk = vrai
+            Ecrire "Bonjour" , prenom
+        FinSi
+        
+        TantQue !saisieOk
+
+    fin traitement
+
+
+
+            

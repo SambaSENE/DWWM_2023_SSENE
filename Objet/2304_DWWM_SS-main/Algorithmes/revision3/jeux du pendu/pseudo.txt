@@ -1,0 +1,24 @@
+﻿Algorithme : jeu du pendu
+
+	Variables : 
+		player1 := chaine de caractere
+		player2 := cahine de caractere
+		counter := entier
+		hiddenWord := string
+		word:= string
+		saisieOk := booleen
+
+	Traitement :
+		counter <- 0
+
+		TantQue counter < 6 faire
+			faire 
+				Ecrire "Veuillez saisir un mot pour commencer la partie"
+				Lire player1
+			TantQue player1 > 5 && !saisieOK 
+			
+			Pour entier  1 allant de i à taille.player / 2 i+1
+
+			fin Pour
+
+		Fin TantQue

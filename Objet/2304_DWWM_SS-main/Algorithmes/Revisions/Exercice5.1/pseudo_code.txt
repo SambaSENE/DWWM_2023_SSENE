@@ -1,0 +1,26 @@
+﻿﻿VARIABLES
+
+
+		
+	cptNbParfait <- 0
+	nbParfait <- 1
+
+DEBUT PROGRAMME
+		Traitement :	
+
+	Tant Que cptNbParfait < 4
+		totalDiviseur <- 0
+
+		Pour diviseur De 1 à nbParfait exclu
+			Si nbParfait mod diviseur = 0
+				totalDiviseur <- totalDiviseur + diviseur
+			Fin Si
+
+		Fin Pour
+		Si nbParfait == totalDiviseurs
+			Ecrire nbParfait, " est un nombre parfait."
+			cptNbParfait <- cptNbParfait + 1
+		Fin Si
+		nbParfait <- nbParfait + 1
+	Fin Tant Que
+FIN PROGRAMME

@@ -1,0 +1,13 @@
+﻿Algorithme :  Dénombrer les lettres de l'alphabet dans un tableau
+
+//  Variables :
+				alphabet est une chaine  de caratere
+				texte  est une chaine de caractere
+				cpt est un entier
+
+// Traitement
+
+	Ecrire "Veuillez saisir  un texte"
+	Li
+
+Fin Traitement

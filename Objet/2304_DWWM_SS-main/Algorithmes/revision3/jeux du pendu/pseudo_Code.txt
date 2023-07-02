@@ -1,0 +1,36 @@
+﻿Algorithme : Jeux du pendu
+
+	"	Jeu du pendu:L'algorithme lit un mot proposé par un premier joueur. 
+
+	Ce mot a une longueur minimum de 5 caractères (à contrôler).
+	
+	L'algorithme affiche ensuite le mot où toutes les lettres sauf la première et la dernière sont 
+		remplacées par un tiret. Un deuxième joueur propose des lettres une à une. 
+		Chaque fois que la lettre se trouve dans le mot, l'algorithme remplace les 
+		tirets qui remplaçaient cette lettre et réaffiche le mot. Le second joueur a 
+		droit à un maximum de 6 essais infructueux (lettre ne se trouvant pas dans 
+		le mot)."
+
+Choisir un mot aléatoire à deviner.
+
+Initialiser le nombre de tentatives restantes.
+
+Afficher une représentation visuelle du pendu (au début, il n'y a aucune partie du pendu).
+
+Afficher le mot à deviner avec les lettres déjà trouvées et des espaces pour les lettres manquantes.
+
+Tant que le mot n'a pas été entièrement deviné et qu'il reste des tentatives : 6. Demander au joueur de proposer une lettre.
+
+Vérifier si la lettre proposée est présente dans le mot.
+
+Si oui, mettre à jour le mot à deviner en affichant la lettre trouvée à toutes les positions correspondantes.
+
+Si non, décrémenter le nombre de tentatives restantes et afficher une partie supplémentaire du pendu.
+
+Afficher le mot à deviner avec les lettres trouvées.
+
+Afficher le nombre de tentatives restantes et la représentation visuelle du pendu.
+
+Si le mot a été entièrement deviné, afficher un message de victoire.
+
+Sinon, afficher un message de défaite et révéler le mot complet.

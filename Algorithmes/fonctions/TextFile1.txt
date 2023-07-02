@@ -1,0 +1,19 @@
+﻿Algorithme :  Addition 2 nombres
+
+Fonction AdditioneDeuxNombre (a: reel , b : reel) : reel
+
+Debut
+	resultat := reel
+	resultat <- a + b
+
+	retourne resultat
+
+Fin
+
+
+
+Procedure DireBonjour(prenom : string) : vide
+
+Debut:
+	Ecrire "Bonjour " , prenom
+Fin

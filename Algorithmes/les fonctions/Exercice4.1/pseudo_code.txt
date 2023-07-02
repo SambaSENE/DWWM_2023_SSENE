@@ -1,0 +1,7 @@
+﻿ALgorithme:  RECHERCHER UN NOMBRE DANS UN TABLEAU
+
+	int[] array  = new int[]{8 , 16 , 128 , 256 , 512}
+
+
+
+	fonction  

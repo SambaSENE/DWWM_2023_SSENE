@@ -1,0 +1,33 @@
+﻿Algorithme : Palindrome
+
+		str est une chaine de caractere 
+		inputOk est un booleen
+		palindrome est un booleen 
+
+
+		palindrom = true
+		intput = true
+		
+		Faire 
+			
+				Ecrire "Veuillez saisir une phrase"
+				Lire str
+				Si inputOk == "."
+					inputOk <-- vrai
+				fin Si
+		Tant Que str == "."  && !inputOk
+
+		Pour entier de i allant i à str.taille / 2 ; i--
+			si str[i] != str[str.length - i]
+				palindrome = true
+			fin si 
+		fin Pour
+
+		Si str == "." alors
+			Ecrire " La phrase est vide"
+		sinon
+			Si str == inversWord alors
+				Ecrire "La chaine de caractere est un palindrome"
+		sinon
+			Ecrire "La chaine de caractere n'est pas un palindrome"
+		fin Si

@@ -1,0 +1,33 @@
+﻿Début du programme
+    Créer une liste  (string, double) appelée "legumes"
+
+    Initialiser une variable de type string appelée "saisie" avec une valeur vide
+
+    Tant que "saisie" est différent de "go" faire
+        Afficher "Entrez le nom d'un légume suivi de son prix au kilo (ou 'go' pour afficher les résultats) : "
+        Lire une ligne depuis la console et stocker la valeur dans "saisie"
+
+        Si "saisie" est différent de "go" alors
+            Diviser "saisie" en deux parties en utilisant l'espace comme séparateur et stocker le résultat dans un tableau appelé "elements"
+            Extraire le premier élément de "elements" et le stocker dans une variable de type string appelée "legume"
+            Extraire le deuxième élément de "elements", le convertir en double et le stocker dans une variable de type double appelée "prix"
+            Ajouter le tuple (legume, prix) à la liste "legumes"
+        Fin Si
+    Fin Tant que
+
+    Pour chaque élément "legume" dans la liste "legumes" faire
+        Afficher "1 kilogramme de " + legume.Item1 + " coûte " + legume.Item2 + " euros."
+    Fin Pour chaque
+
+    Initialiser une variable de type tuple (string, double) appelée "legumeMoinsCher" avec la première valeur de la liste "legumes"
+
+    Pour chaque élément "legume" dans la liste "legumes" faire
+        Si le deuxième élément de "legume" est inférieur au deuxième élément de "legumeMoinsCher" alors
+            Assigner "legume" à "legumeMoinsCher"
+        Fin Si
+    Fin Pour chaque
+
+    Afficher "Légume le moins cher au kilo : " + legumeMoinsCher.Item1
+
+    Lire une ligne depuis la console
+Fin du programme

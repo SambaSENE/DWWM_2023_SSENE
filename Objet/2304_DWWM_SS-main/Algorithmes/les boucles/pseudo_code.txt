@@ -1,0 +1,25 @@
+﻿Algorithme: Inversion de variable
+
+Variables:
+            a est un entier
+            b est un entier
+            c est un entier
+
+Debut:
+           Ecrire "Programme inversion de variable"
+
+            a <-- 8
+            Lire a
+            b <-- b
+            Lire b
+
+          Traitement :
+
+            c <-- a
+            a <-- b
+            b <-- c
+
+          Ecrire "La valeur de B est" , a , " La valeur b " , B ;
+
+          Ecrire "Fin programme"
+Fin 

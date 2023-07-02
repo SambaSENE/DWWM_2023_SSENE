@@ -1,0 +1,35 @@
+﻿Algorithme: Dénombrer les lettres de l'alphabet dans les tableau
+
+
+// Variables : 
+				alphabet est une chaine  de caractere
+				cpt est un entier
+				texte est une chaine de caractere
+				output est un booleen 
+
+// Traitement
+
+			Ecrire "Veuillez saisir votre texte"
+			lire texte
+
+			entier de i  est egale 0
+
+			faire 
+				Ecrire "Veuillez saisir un texte"
+				lire text
+			tant que Text < 120
+			
+			pour entier de i  allant i à alphabet.taille i++
+					
+					nbOccurence est un entier
+
+					Pour entier de j allant j à texte.taille j++
+						si alphabet[i] == texte[j] alors
+							nbOccurence = nbOccurences+1
+						fin Si
+					fin pour
+				Ecrire alphabet[i] + " presente en " +   nbOccurence " fois dans le texte"
+			fin Pour
+
+
+// Fin de traitement

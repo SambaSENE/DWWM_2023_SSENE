@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jeux du pendu", "jeux du pendu\jeux du pendu.csproj", "{7E0DDC89-4E22-4949-B135-2050E01D2E29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jeuxDuPendu", "jeuxDuPendu\jeuxDuPendu.csproj", "{65FC6D40-F84F-405A-A2BB-CFB5049152FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E0DDC89-4E22-4949-B135-2050E01D2E29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E0DDC89-4E22-4949-B135-2050E01D2E29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E0DDC89-4E22-4949-B135-2050E01D2E29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E0DDC89-4E22-4949-B135-2050E01D2E29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65FC6D40-F84F-405A-A2BB-CFB5049152FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65FC6D40-F84F-405A-A2BB-CFB5049152FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65FC6D40-F84F-405A-A2BB-CFB5049152FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65FC6D40-F84F-405A-A2BB-CFB5049152FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35BE37E5-A897-47F7-92A5-9F68F39CEBE2}
+	EndGlobalSection
+EndGlobal

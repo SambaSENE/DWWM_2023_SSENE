@@ -1,0 +1,20 @@
+Algorithme : Recherche des diviseurs d'un nombre
+
+	N est un entier 
+	i est un entier
+
+	// Traitement 
+
+	Ecrire " Veuillez saisir un nombre"
+	Lire N
+
+	Pour i allant i à N 
+		Si N % i == 0 alors
+			Ecrire i;
+		Sinon
+			Ecrire "Ce nombre n'est premier"
+		fin Si
+	fin Pour
+
+	Ecrire N
+	

@@ -1,0 +1,25 @@
+﻿Algorithme :  Tri de nombres
+
+
+
+
+
+
+fonction tri(entier : a ,  entier := b): entier
+
+	variables :
+			resultat
+	Debut:
+		Si a > b alors
+			resultat <- a > b
+		Sinon 
+			resultat <- b > a
+		Fin Si
+
+		retoune(resultat)
+
+	Fin;
+
+
+	fonction afficheRes()
+		

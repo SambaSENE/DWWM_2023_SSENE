@@ -1,0 +1,53 @@
+﻿Algorithmes : Conversion degrés fahrenheit en degres culsius
+
+		Variables :
+			
+			celsius : reel double precision			
+			fahrenheit : reel double precision
+			saisie : chaine double
+			optionSaisie : string
+		
+			inputOk : booleen	
+			doConversion : booleen 
+			conversion : booleen
+
+		Traitement:
+			
+			inputOk <- faux
+			conversion <- vrai
+
+			repeter
+
+				Ecrire "Veuillez saisir une valeur"
+				Lire saisie 
+
+				Ecrire "quelles températures souhaiteriez vous convertir? :
+				- C pour Celsius - F pour Fahrenheit."
+				lire unite
+
+				Si  optionSaisie == "c" alors
+					Ecrire saisie ," ",unite
+					doConversion <- vrai
+				Sinon
+					Ecrire saisie ," ",unite
+					doConversion <- faux
+				fin Si
+			Tant que saisie <= -459.67 ET saisie >= 5000000 ET !inputOk
+
+			Si doConversion == vrai alors
+				celsius = (saisie - 32 ) * 5 / 9
+				conversion <- vrai
+			Sinon 
+				fahrenheit = (saisie * 9 /5) + 32	
+				conversion <- faux
+			finSi
+
+
+		Fin traitement 
+
+
+		Affichage : 
+			Si !conversion alors 
+				Ecrire fahrenheit , " " , optionSaisie 
+			Sinon
+				Ecrire celsius , " " , optionSaisie

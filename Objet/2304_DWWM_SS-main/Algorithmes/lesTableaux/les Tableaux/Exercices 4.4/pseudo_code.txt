@@ -1,0 +1,26 @@
+﻿Algorithme :  Tri de tableau
+
+	array est un tableau
+
+
+	entier[] array = {128 , 64 , 8 ,512 , 32 ,256}
+	
+
+
+	Pour entier a allant a à  array.taille; i++
+		entier indice = a
+
+		Pour entier j allant j à arra[a] ; j++
+			si array[indice] < array[a] alors
+				
+				indice = j
+			fin Si
+		fin Pour
+
+		entier temp = array[indiceJ];
+                array[indiceJ] = array[a];
+                array[a] = temp;
+	fin Pour
+
+
+	

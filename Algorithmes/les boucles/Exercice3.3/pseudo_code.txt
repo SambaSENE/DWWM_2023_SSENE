@@ -1,0 +1,27 @@
+﻿Algorithme :   INTERVALLE ENTRE 2 NOMBRES
+
+    // Variables :
+        A est un entier
+        B est un entier
+
+
+        i est un entier
+
+   // Traitement
+
+    Ecrire "Veuillez saisir la valeur de A"
+    Lire A
+
+    Ecrire "Veuillez saisir la valeur de B"
+    Lire B
+
+
+    Si A <= B
+        Pour i allant A  à B i+1
+            Ecrire I
+        Fin Pour
+    Sinon
+        Ecrire "Erreur"
+    Fin Si
+
+    // Fin Traitement

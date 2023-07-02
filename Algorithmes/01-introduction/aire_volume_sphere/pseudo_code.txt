@@ -1,0 +1,27 @@
+﻿Algorithme: calcul l'aire et le volume d'un sphere
+
+Variables :
+			rayon est un double
+			aire est un double
+			volume est double
+			PI en un double
+
+
+Traitement 
+			Ecrire "Vous calculez l'aire et la volume d'un sphere"
+
+			PI <-- 3.14
+
+			rayon <-- 6.5 
+
+			Lire rayon
+
+			aire  = PI * rayon * 4
+			
+			volume = (PI * rayon * rayon * rayon) * 4 / 3
+			 Ecrire "La volume du sphere est de " , volume  , " et " , "l'aire du sphere est" , aire 
+
+			 Ecrire "Fin du programme"
+
+fin
+

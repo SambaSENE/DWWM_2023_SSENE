@@ -1,0 +1,32 @@
+﻿	Algorithme: Recherche une lettre dans une phrase
+
+
+	// Variable: 
+
+		phrase est une chaine de caractere 
+		letter est une chanine de caractere
+		cpt est un entier
+		isExist est un booleen
+
+	// Traitement 
+
+		Ecrire "Veuillez saisir une occurence"
+		lire lettre
+		
+		
+			pour i allant 0 à phrase.taille i++
+				Si lettre == phrase[i] alors
+					isExist = vrai
+					cpt = cpt+1
+				finSi
+			finPour
+		Si phrase == ""  ou phrase == "." alors
+			Ecrire "La phrase est vide"
+		Sinon
+			Si cpt == 0 alors
+				Ecrire "la lettre n'est pas presente"
+			sinon
+				si cpt > 0 alors
+					Ecrire "La lettre est presente" + cpt "fois"
+			finsi
+		finsi
