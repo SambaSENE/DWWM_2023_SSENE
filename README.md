@@ -1,0 +1,2 @@
+# DWWM_2023_SSENE
+All projects DWWM 2023
