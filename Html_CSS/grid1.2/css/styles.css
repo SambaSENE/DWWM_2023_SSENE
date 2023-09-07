@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: 300px 300px;
+    grid-template-areas: "header header" "main main" "footer footer";
+}
+header{
+    grid-area: header;
+    width: 100%;
+    background-color: brown;
+}
+article {
+    background-color: grey;
+
+}
