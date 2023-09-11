@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 body{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     display: grid;
     grid-template-columns: repeat(4 ,1fr);
@@ -48,7 +48,7 @@ nav{
 .item6{
     background-color: #CCCC33;
     grid-column-start: 4;
-    grid-column-end: 6;
+    grid-column-end: 5;
     
 }
 .item7{
