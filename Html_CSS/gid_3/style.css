@@ -1,0 +1,55 @@
+body{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas: "header nav nav nav nav nav " 
+                        "div div div div div div "
+                        "main main main aside aside aside"
+                        "footer footer footer footer footer footer "
+                         ;
+
+}
+
+header{
+    grid-area: header;
+    background-color: aquamarine;
+    grid-row: 1/1;
+    
+}
+nav{
+    
+    background-color: aquamarine;
+    grid-area: nav;
+}
+.fil_ariane{
+    background-color: aquamarine;
+
+    grid-area: div;
+}
+
+main{
+    grid-area: main;
+    background-color: aquamarine;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+}
+
+aside{
+    grid-area: aside;
+    background-color: aquamarine;
+
+}
+
+footer{
+    grid-area: footer;
+    background-color: aquamarine;
+    grid-row-start: 5;
+    grid-row-end: 5;
+
+}

@@ -3,6 +3,8 @@
     src: url('../fonts/channel-webfont.woff');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +21,8 @@ body {
     height: 100vh;
     background-image: url('../img/bg_motif.gif');
     background-repeat: repeat;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Arial, Helvetica, sans-serif';
+    position: relative;
 }
 
 ul {
@@ -36,12 +39,13 @@ header {
     height: 90px;
     background-image: url('../img/header.png') repeat;
     border-bottom: 2px solid #fff;
+    position: fixed;
 }
 
 header nav {
-    width: 60vw;
+    width: 60%;
     float: right;
-    margin-right: 3%;
+    margin-right: 32px;
     margin-top: 10px;
 
 }
@@ -80,8 +84,8 @@ header .sous_menu li:hover {
 /* Main */
 .logo {
     position: fixed;
-    top: 63px;
-    left: 290px;
+    top: 58px;
+    left: 228px;
 }
 
 main {
@@ -89,9 +93,15 @@ main {
 
 }
 
+.container {
+    width: 60%;
+    background-color: rgba(124, 124, 124, 0.3);
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(56, 55, 55, 0.05) 0px 0.25em 1em;
+}
+
 main article {
-    margin: 8px auto;
-    width: 50%;
+    margin: 3px auto;
+    width: 94%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -99,51 +109,106 @@ main article {
 }
 
 
-main article img {
+.container article img {
     width: 100%;
     margin: 0 auto;
+    box-shadow: rgb(255, 255, 255) 0px 20px 30px -10px;
+
 }
 
 main article h1 {
     text-align: center;
-    margin: 2px 42px;
+    margin: 2px 0px;
     padding: 5px 0;
     background-color: #fff;
+    color: rgb(128, 3, 3);
+    font-family: 'satisfy';
 }
-main .card_content{
+
+main .card_content {
+
+    width: 100%;
     background-size: contain;
     background-repeat: repeat;
     display: flex;
     flex-direction: row;
-
     border: none;
+    background-image: url('../img/bg_g.png');
+    background-repeat: repeat;
 }
-main .card_content .card_1 , .card_2 , .card_3{
+
+main .card_content .card_1,
+.card_2,
+.card_3 {
     position: relative;
-    background-image: url('../img/bg_g.png')  ;
+    background-image: url('../img/bg_g.png');
     width: 30%;
 
 }
-main .card_content .card h2{
+
+main .card_content .card h3 {
     color: #fff;
-    margin: 10px 0;
+    padding: 30px 6px;
+    font-family: 'chanel-regular';
+    font-size: 1.4rem;
+    font-weight: 200;
 }
-main .card_content .icon{
-  display: flex;
-  flex-direction: row-reverse;
-justify-content: space-around;
+
+main .card_content .icon {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
 }
-main .card_content img{
-    width: 50px;
+
+main .card_content img {
+    width: 30px;
     position: absolute;
     right: 10px;
+    top: 25px;
 }
-main article input{
+
+main .card_content p {
+    text-align: center;
+    padding: 0 15px;
+    text-align: justify;
+}
+
+.btn {
     width: 100px;
     height: 40px;
-    margin: 10px  auto;
+    margin: 20px auto;
     font-family: sans-serif;
     color: #fff;
     background-color: gray;
     border: none;
+    transition:
+        width 2s,
+        height 2s,
+        background-color 2s,
+        rotate 2s;
+
+}
+
+.btn:hover {
+    color: rgb(128, 3, 3);
+    rotate: 50deg;
+
+}
+
+section {
+    width: 100%;
+}
+
+.selection{
+    
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
