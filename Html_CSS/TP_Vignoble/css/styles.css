@@ -40,6 +40,7 @@ header {
     background-image: url('../img/header.png') repeat;
     border-bottom: 2px solid #fff;
     position: fixed;
+    top: 0;
 }
 
 header nav {
