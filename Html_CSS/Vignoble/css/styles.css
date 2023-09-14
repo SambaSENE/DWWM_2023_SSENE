@@ -11,7 +11,7 @@ html{
     font-size: 65,2%;
 }
 body{
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     width: 100vw;
     height: 100vh;
     background-image: url('../img/bg_motif.gif');
@@ -82,7 +82,7 @@ header nav ul li:hover .sous_menu {
 .logo{
     position: absolute;
     top: 70px;
-    left: 100px;
+    left: 180px;
 }
 /* main*/
 main{
@@ -90,7 +90,7 @@ main{
 }
 .container{
     background-color: #00000027;
-    width: 70%;
+    width: 50vw;
     margin: 10px auto;
 }
 .container img{
@@ -104,12 +104,13 @@ main{
 .cards{
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 8px;
 }
 
 .card{
     position: relative;
     padding: 10px;
+    background-image: url('../img/bg_g.png');
 
 }
 .card img{
@@ -136,3 +137,56 @@ main{
     border: none;
     color: #fff;
 }
+/* Section */
+section{
+    width: 100%;
+
+}
+.bloc{
+    width: 50vw;
+    margin: 0 auto;
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+.selection{
+    border: 1px solid red;
+    grid-column-start: 1;
+    background-color: #42404027;
+    
+}
+.selection h1{
+    font-family: 'channel-regular';
+    color: #fff;
+    text-align: center;
+    margin: 10px 0;
+    
+}
+.selection ul{
+    
+}
+.selection ul li{
+    padding-left: 40px;
+    margin: 15px 0px;
+    border-bottom: 1px solid #fff;
+    height: 40px;
+    
+}
+.selection ul li a{
+    margin: auto 0;
+    color: #000;
+}
+.selection ul li:first-child{
+    height: 40px;
+    border-top: 1px solid #fff;
+    margin-bottom: 10px;
+}
+.selection ul li img{
+    margin-right:  30px;
+}
+.cadeaux_accessoires{
+    grid-column-start: 2 ;
+    grid-column-end: 4;
+}
+
