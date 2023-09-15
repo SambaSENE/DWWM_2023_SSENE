@@ -4,18 +4,15 @@
     src: url('../fonts/channel-webfont.woff');
 }
 
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
 html {
     font-size: 65.2%;
 }
-
 
 body {
     font-family: 'fantasy', sans-serif;
@@ -26,16 +23,13 @@ body {
     position: relative;
 }
 
-
 ul {
     list-style: none;
 }
 
-
 a {
     text-decoration: none;
 }
-
 
 header {
     width: 100%;
@@ -64,6 +58,7 @@ header nav {
 .menu>li {
     display: inline-block;
     margin-right: 30px;
+    position: relative;
 }
 
 .menu>li a {
@@ -84,6 +79,15 @@ header nav {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu>li:hover .sous_menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .sous_menu li {
@@ -106,7 +110,7 @@ header nav {
     background-color: #f0f0f0;
 }
 
-/*contenu principal */
+/* contenu principal */
 main {
     width: 100%;
     padding-top: 77px;
@@ -116,7 +120,7 @@ main {
 .container {
     background-color: rgba(71, 70, 70, 0.264);
     margin: 0 auto;
-    width: 48vw;
+    width: 50vw;
     padding: 10px;
 }
 
@@ -183,48 +187,55 @@ main {
     font-size: 1.8rem;
 }
 
-/*section */
+/* section */
 section {
     width: 100%;
+    text-align: center;
+    /* padding: 0px; */
 }
 
-/*sélection */
 .selection {
     text-align: center;
-    width: 48vw;
+    width: 50vw;
     margin: 0 auto;
     background-color: rgba(71, 70, 70, 0.264);
 }
 
-/*wrapper */
 .wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-/*liste */
+
+.list,
+.bloc {
+    height: 100%;
+}
+
 .list {
-    padding-top: 20px;
+    height: 50%;
+
+    padding: 10px 15px;
     background-color: rgba(71, 70, 70, 0.264);
 }
 
-.list h1 {
+.list h3 {
     font-family: 'channel-regular', sans-serif;
     font-size: 2rem;
+    color: #fff;
 }
 
-/*menu de vin */
 .menu_vin {
-    width: 20vw;
-    padding: 15px;
+    width: 15vw;
+    /* padding-right: 22px; */
     list-style: none;
 }
 
 .menu_vin li {
     border-bottom: 1px solid #fff;
-    padding: 20px 0;
-    margin-bottom: 10px;
+    padding: 15px 0;
+    margin-bottom: 0px;
     display: flex;
     align-items: center;
 }
@@ -243,4 +254,38 @@ section {
     text-decoration: none;
     color: #000;
     display: block;
+}
+
+.carte_cadeau {
+    width: 60vw;
+    background-color: rgba(108, 106, 106, 0.264);
+    margin-left: 20px;
+}
+
+.carte_cadeau>h3,
+.bloc h4 {
+    font-family: 'channel-regular';
+    color: #fff;
+    margin: 3px 0;
+}
+
+.card_content {
+    padding: 10px;
+    /* border: 1px solid red; */
+    margin: 15px;
+}
+
+.card_content img {
+    float: left;
+    border: 2px solid #fff;
+    margin-right: 15px;
+    width: 30%;
+}
+
+
+
+.bloc p {
+    text-align: justify;
+    padding-left: 20px;
+    padding-right: 20px;
 }
