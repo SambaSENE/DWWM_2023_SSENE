@@ -1,0 +1,30 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: grid;
+    gap: 15px;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: repeat(10 , 1fr);
+    grid-template-rows: repeat(10, 1fr);
+}
+.box{
+    background-color: #999;
+}
+header{
+    
+}
+main{
+    
+}
+
+#produits{
+    
+}
+footer{
+   
+}
