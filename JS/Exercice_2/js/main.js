@@ -1,10 +1,12 @@
-function controle() {
-    let qte = document.querySelector("#qte");
-    let prixUnit = document.querySelector("#prixUnit");
+function calcul() {
+    let qte = parseFloat(document.querySelector("#qte").value);
+    let prixUnit = parseFloat(document.querySelector("#prixunit").value);
 
+    let sousPrix = qte * prixUnit;
     
+    document.querySelector("#totaux").value = sousPrix.toFixed(2);
 }
 
-document.addEventListener("onchange" , function(){
-    controle();
-}) 
+function controle() {
+    calcul();
+}
