@@ -11,11 +11,11 @@ function afficher() {
 
   document.getElementById("date").value = chaineDate;
 }
-
-
 document.querySelector("#btnDate").addEventListener("click", function () {
   afficher();
 })
+
+
  function afficherHeure(){
   let heureDate = new Date();
   let heure = heureDate.getHours();
