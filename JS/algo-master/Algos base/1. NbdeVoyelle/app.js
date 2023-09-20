@@ -1,7 +1,8 @@
 function nbDeVoyelles(txt) {
-
-
-    
+    for(let value of txt){
+        value = (value==="iuoae") ? value+1 : value;
+    }
+    console.log(value)
 }
 
 

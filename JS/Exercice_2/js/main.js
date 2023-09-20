@@ -1,12 +1,13 @@
 function calcul() {
-    let qte = parseFloat(document.querySelector("#qte").value);
-    let prixUnit = parseFloat(document.querySelector("#prixunit").value);
+   
 
-    let sousPrix = qte * prixUnit;
-    
-    document.querySelector("#totaux").value = sousPrix.toFixed(2);
+    let qte2 = parseFloat(document.querySelector("#qte2").value);
+    let prixUnit2 = parseFloat(document.querySelector("#prixunit2").value);
+    let sousPrix2 = qte2 * prixUnit2; 
+    document.querySelector("#totaux2").value = sousPrix2.toFixed(2);
 }
 
 function controle() {
     calcul();
 }
+
