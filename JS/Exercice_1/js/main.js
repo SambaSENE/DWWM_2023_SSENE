@@ -11,7 +11,7 @@ function afficher() {
 
   document.getElementById("date").value = chaineDate;
 }
-document.querySelector("#btnDate").addEventListener("click", function () {
+document.querySelector("#btnDate").addEventListener("click",  ()=> {
   afficher();
 })
 
@@ -20,7 +20,7 @@ document.querySelector("#btnDate").addEventListener("click", function () {
   let heureDate = new Date();
   let heure = heureDate.getHours();
   let minute = heureDate.getMinutes();
-  let sec = heureDate.getMinutes();
+  let sec = heureDate.getSeconds();
 
   heure= (heure < 10) ? '0' + heure : heure;
   minute = (minute < 10) ? '0' + minute : minute;
@@ -29,6 +29,6 @@ document.querySelector("#btnDate").addEventListener("click", function () {
   let currentHours = heure + ' : ' + minute +' : ' +sec;
   document.querySelector("#time").value=currentHours; 
  }
- document.querySelector("#btnTime").addEventListener("click" ,function () {
+ document.querySelector("#btnTime").addEventListener("click" , () => {
   afficherHeure();
  })
