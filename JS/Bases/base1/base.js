@@ -6,7 +6,7 @@ monParagraphe.innerHTML = "Nouveau contenu HTML";
 monParagraphe.style.color = "blue";
 
 // Sélectionner plusieurs éléments par leur classe
-let elementsParClasse = document.getElementsByClassName("maClasse");
+let elementsParClasse2 = document.getElementsByClassName("maClasse");
 
 // Modifier le texte brut des éléments
 for (let i = 0; i < elementsParClasse.length; i++) {
@@ -14,7 +14,7 @@ for (let i = 0; i < elementsParClasse.length; i++) {
 }
 
 // Ajouter un gestionnaire d'événements à un bouton
-let monBouton = document.getElementById("monBouton");
+let monBouton2 = document.getElementById("monBouton");
 monBouton.addEventListener("click", function () {
   alert("Le bouton a été cliqué !");
 });
@@ -63,7 +63,7 @@ nouvelElement.textContent = "Contenu du nouvel élément";
 document.body.appendChild(nouvelElement);
 
 // Supprimer un élément existant du DOM
-let elementASupprimer = document.getElementById("elementASupprimer");
+let elementASupprimer2 = document.getElementById("elementASupprimer");
 elementASupprimer.parentNode.removeChild(elementASupprimer);
 
 // Sélectionner un élément parent et accéder à ses enfants
