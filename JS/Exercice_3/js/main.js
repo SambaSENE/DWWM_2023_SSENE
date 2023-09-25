@@ -11,19 +11,19 @@ function valNum(maChaine) {
     return valeur;
 }
 
-// Exercice n° 3 : calculerSigne
+
 function calculerSigne(moisNaissance) {
     const signes = ["Capricorne","Verseau","Poisson","Bélier","Taureau","Gémeaux","Cancer","Lion","Vierge","Balance","Scorpion","Sagittaire"];
-    return signes[moisNaissance - 1];
+    //return signes[moisNaissance]; // A voir pourquoi cette erreur
 }
 
-// Exercice n° 4 : Fonction formOK
+
 function formOK() {
-    const nom = document.getElementById("nomUtilisateur").value;
-    const prenom = document.getElementById("prenomUtilisateur").value;
-    const jour = document.getElementById("jour").value;
-    const mois = document.getElementById("mois").value;
-    const annee = document.getElementById("annee").value;
+    const nom = document.querySelector("#nomUtilisateur").value;
+    const prenom = document.querySelector("#prenomUtilisateur").value;
+    const jour = document.querySelector("#jour").value;
+    const mois = document.querySelector("#mois").value;
+    const annee = document.querySelector("#annee").value;
     
     if (nom !== "" && prenom !== "" && jour !== "" && mois !== "" && annee !== "") {
         return true;
@@ -31,11 +31,11 @@ function formOK() {
     return false;
 }
 
-// Exercice n° 5 : Fonction calculerPseudo
+
 function calculerPseudo() {
-    const nom = document.getElementById("nomUtilisateur").value;
-    const prenom = document.getElementById("prenomUtilisateur").value;
-    const mois = document.getElementById("mois").value;
+    const nom = document.querySelector("#nomUtilisateur").value;
+    const prenom = document.querySelector("#prenomUtilisateur").value;
+    const mois = document.querySelector("#mois").value;
     
     const valeurNom = valNum(nom);
     const valeurPrenom = valNum(prenom);
@@ -44,24 +44,24 @@ function calculerPseudo() {
     
     const pseudo = signe + (valeurNom + valeurPrenom);
     
-    document.getElementById("pseudo").value = pseudo;
+    document.querySelector("#pseudo").value = pseudo;
     
-    // Activer le bouton Valider
-    document.getElementById("validerButton").disabled = false;
+  
+    document.querySelector("#validerButton").disabled = false;
 }
 
-// EFonction valider
-document.getElementById("validerButton").addEventListener("click", function() {
+
+document.querySelector("#validerButton").addEventListener("click", function() {
     if (formOK()) {
-        const nom = document.getElementById("nomUtilisateur").value;
-        const prenom = document.getElementById("prenomUtilisateur").value;
-        const jour = document.getElementById("jour").value;
-        const mois = document.getElementById("mois").value;
-        const annee = document.getElementById("annee").value;
+        const nom = document.querySelector("#nomUtilisateur").value;
+        const prenom = document.querySelector("#prenomUtilisateur").value;
+        const jour = document.querySelector("#jour").value;
+        const mois = document.querySelector("#mois").value;
+        const annee = document.querySelector("#annee").value;
         
-        const pseudo = document.getElementById("pseudo").value;
+        const pseudo = document.querySelector("pseudo").value;
         
-        // Stocker les informations dans un cookie (nom, prénom, date de naissance, pseudo)
+       
         document.cookie = `nom=${nom};`;
         document.cookie = `prenom=${prenom};`;
         document.cookie = `jour=${jour};`;
@@ -69,13 +69,13 @@ document.getElementById("validerButton").addEventListener("click", function() {
         document.cookie = `annee=${annee};`;
         document.cookie = `pseudo=${pseudo};`;
         
-        // Rediriger vers la page Accueil.html
+        
         window.location.href = "Accueil.html";
     } else {
         alert("Veuillez remplir tous les champs du formulaire.");
     }
 });
-// Exercice n° 8 : Fonction getCookie
+
 function getCookie(variable) {
     const cookies = document.cookie.split("; ");
     for (let i = 0; i < cookies.length; i++) {
@@ -87,7 +87,7 @@ function getCookie(variable) {
     return null;
 }
 
-// Exercice n° 9 : Fonction ecrireAccueil
+
 window.onload = function() {
     const nom = getCookie("nom");
     const prenom = getCookie("prenom");
@@ -96,13 +96,13 @@ window.onload = function() {
     const annee = getCookie("annee");
     const pseudo = getCookie("pseudo");
     
-    document.getElementById("nom").textContent = nom;
-    document.getElementById("prenom").textContent = prenom;
-    document.getElementById("dateNaissance").textContent = `${jour}/${mois}/${annee}`;
-    document.getElementById("pseudo").textContent = pseudo;
+    document.querySelector("#nom").textContent = nom;
+    document.querySelector("#prenom").textContent = prenom;
+    document.querySelector("#dateNaissance").textContent = `${jour}/${mois}/${annee}`;
+    document.querySelector("#pseudo").textContent = pseudo;
     
-    // Calculer le nombre de jours restants jusqu'à l'anniversaire et l'afficher
-    const dateAnniversaire = new Date(annee, mois - 1, jour);
+   
+    //const dateAnniversaire = new Date(annee, mois - 1, jour);
     const dateCourante = new Date();
     dateAnniversaire.setFullYear(dateCourante.getFullYear());
     
@@ -112,9 +112,9 @@ window.onload = function() {
         joursRestants = Math.ceil(diff / (1000 * 60 * 60 * 24));
     }
     
-    document.getElementById("joursRestants").textContent = joursRestants;
+    document.querySelector("#joursRestants").textContent = joursRestants;
 };
-// Exercice n° 8 : Fonction getCookie
+
 function getCookie(variable) {
     const cookies = document.cookie.split("; ");
     for (let i = 0; i < cookies.length; i++) {
@@ -125,8 +125,9 @@ function getCookie(variable) {
     }
     return null;
 }
-
-// Exercice n° 9 : Fonction ecrireAccueil
+/**
+ * 
+ */
 window.onload = function() {
     const nom = getCookie("nom");
     const prenom = getCookie("prenom");
@@ -135,21 +136,21 @@ window.onload = function() {
     const annee = getCookie("annee");
     const pseudo = getCookie("pseudo");
     
-    document.getElementById("nom").textContent = nom;
-    document.getElementById("prenom").textContent = prenom;
-    document.getElementById("dateNaissance").textContent = `${jour}/${mois}/${annee}`;
-    document.getElementById("pseudo").textContent = pseudo;
+    document.querySelector("#nom").textContent = nom;
+    document.querySelector("#prenom").textContent = prenom;
+    document.querySelector("#dateNaissance").textContent = `${jour}/${mois}/${annee}`;
+    document.querySelector("#pseudo").textContent = pseudo;
     
-    // Calculer le nombre de jours restants jusqu'à l'anniversaire et l'afficher
-    const dateAnniversaire = new Date(annee, mois - 1, jour);
+    
+    const dateAnniversaire = new Date(annee, mois, jour);
     const dateCourante = new Date();
     dateAnniversaire.setFullYear(dateCourante.getFullYear());
     
     let joursRestants = 0;
     if (dateAnniversaire > dateCourante) {
         const diff = dateAnniversaire - dateCourante;
-        joursRestants = Math.ceil(diff / (1000 * 60 * 60 * 24));
+       // joursRestants = Math.ceil(diff / (1000 * 60 * 60 * 24));
     }
     
-    document.getElementById("joursRestants").textContent = joursRestants;
+    document.querySelector("joursRestants").textContent = joursRestants;
 };
