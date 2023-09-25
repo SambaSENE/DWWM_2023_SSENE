@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/main.js" defer></script>
+    <title>Astro</title>
+</head>
+
+<body>
+    <main>
+        <article id="inscription">
+            <h1>Evaluation cours Javascript</h1>
+            <fieldset>
+
+                <form action="" method="post">
+                    <h2>formulaire avec traitement Javascript</h2>
+
+                    <legend>Texte libre</legend>
+                    <div>
+                        <textarea name="texte_libre" id="texte_libre" cols="30" rows="5" >texte  libre</textarea>
+                    </div>
+                    <div>
+                        <label for="nomUtilisateur">Nom utilisateur</label>
+                        <input type="text" name="nomUtilisateur" id="nomUtilisateur" onblur="renvoieChaine()" >
+                    </div>
+                    <div>
+                        <label for="prenomUtilisateur">Prenom </label>
+                        <input type="text" name="prenomUtilisateur" id="prenomUtilisateur" onblur="renvoieChaine()">
+
+                        <label for="emailUtilisateur">Email</label>
+                        <input type="email" name="emailUtilisateur" id="emailUtilisateur">
+                    </div>
+                    <div>
+                        <label for="dateNaissance">Date de naissance</label>
+                        <input type="date" name="dateNaissance" id="dateNaissance">
+                    </div>
+                    <div>
+                        <label for="pseudo">Afficher votre pseudo</label>
+                        <input type="text" name="pseudo" id="pseudo" >
+                    </div>
+
+                    <input type="button" value="Validation" class="btn" disabled>
+                    <input type="reset" value="Annuler" class="btn">
+
+                </form>
+            </fieldset>
+        </article>
+    </main>
+</body>
+
+</html>

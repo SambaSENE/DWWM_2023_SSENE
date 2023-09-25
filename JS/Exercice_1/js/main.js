@@ -24,9 +24,9 @@ document.querySelector("#btnDate").addEventListener("click",  ()=> {
 
   heure= (heure < 10) ? '0' + heure : heure;
   minute = (minute < 10) ? '0' + minute : minute;
-  sec = (sec < 10) ? '0' + sec : sec;
+  sec = ((sec < 10) ? '0' + sec : '') + sec;
 
-  let currentHours = heure + ' : ' + minute +' : ' +sec;
+  let currentHours = heure + ' : ' + minute +' : ' + sec;
   document.querySelector("#time").value=currentHours; 
  }
  document.querySelector("#btnTime").addEventListener("click" , () => {

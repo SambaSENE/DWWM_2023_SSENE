@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 65.2%;
+}
+
+body {
+    font-size: 1.6rem;
+    width: 100vw;
+    height: 100vh;
+    background-color: blanchedalmond;
+}
+
+main {
+    width: 100%;
+}
+
+#inscription {
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+main h1 {
+    border-radius: 50px 50px 0 0;
+    box-shadow: 15px 12px 25px 7px rgba(0, 0, 0, 0.92);
+    -webkit-box-shadow: 15px 12px 25px 7px rgba(0, 0, 0, 0.92);
+    -moz-box-shadow: 15px 12px 25px 7px rgba(0, 0, 0, 0.92);
+    border: 2px solid #fff;
+    color: #fff;
+    padding-top: 10px;
+    font-weight: 200;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'arial', Courier, monospace;
+    /* margin: 20px auto;     */
+    background-color: rgb(119, 161, 209);
+}
+
+fieldset {
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    border-radius: 0 0 50px 50px;
+    box-shadow: -5px -6px 33px 17px rgb(122, 122, 122);
+    -webkit-box-shadow: -5px -6px 33px 17px rgb(122, 122, 122);
+    -moz-box-shadow: -5px -6px 33px 17px rgb(122, 122, 122);
+
+
+}
+
+main #inscription form {
+    margin: 80px 20px;
+    width: 100%;
+}
+
+main #inscription form h2 {
+    margin: 20px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+form input {
+    display: inline-block;
+    margin: 10px 0;
+    height: 30px;
+    width: 200px;
+}
+form label{
+    display: inline;
+    margin-right: 10px;
+}
+.btn{
+    width: 100px;
+    height: 30px;
+    display: block;
+}
