@@ -36,3 +36,27 @@ mois.addEventListener('click', () => {
     calculerSigne(mois.value);
 
 });
+// Fonction pour créer dynamiquement les options du jour en fonction du mois et de l'année
+function creerOptionsJour() {
+    const mois = parseInt(document.getElementById("mois").value);
+    const annee = parseInt(document.getElementById("annee").value);
+    const jourSelect = document.getElementById("jour");
+    
+    // Supprimer toutes les options actuelles
+    jourSelect.innerHTML = '<option value="">Sélectionnez le jour</option>';
+    
+    // Déterminer le nombre de jours dans le mois et l'année sélectionnés
+    const joursDansMois = new Date(annee, mois, 0).getDate();
+    
+    // Ajouter les options pour les jours
+    for (let i = 1; i <= joursDansMois; i++) {
+        const option = document.createElement("option");
+        option.value = i;
+        option.textContent = i;
+        jourSelect.appendChild(option);
+    }
+}
+
+// Écouteurs d'événements
+document.getElementById("mois").addEventListener('change', creerOptionsJour);
+document.getElementById("annee").addEventListener('change', creerOptionsJour);
