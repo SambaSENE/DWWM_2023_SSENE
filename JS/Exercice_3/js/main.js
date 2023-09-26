@@ -2,13 +2,14 @@ function valNum(maChaine) {
     maChaine = maChaine.toUpperCase();
     let somme = 0;
     for (let i = 0; i < maChaine.length; i++) {
-        let charCode = maChaine.charCodeAt();
+        let charCode = maChaine.charCodeAt(i);
         if (charCode >= 65 && charCode <= 90) {
             somme += charCode - 64;
         }
     }
     return somme;
 }
+
 
 // function calculerSigne(moisNaissance) {
 //     let signeAstro = ["Capricorne", "Verseau", "Poisson", "Belier", "Taureau", "Gémeaux", "Cancer", "Lion", "Vierge", "Balance", "Scorpion", "Sagittaire"]
