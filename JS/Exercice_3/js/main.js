@@ -131,7 +131,47 @@ document.querySelector('#mois').addEventListener('change', () => {
 function newCookie(_nom ,  _value){
     let dateJour = new Date();
     let dateExpire = new Date(dateJour.getFullYear() , dateJour.getMonth() + 1 , dateJour.getDate());
-    
     dateExpire = dateExpire.toUTCString();
-
+    
+    document.cookie = _nom + '=' + _value + '; expires = ' + dateExpire + '; SameSite = lax';   
 }
+
+document.querySelector('#valider').addEventListener('click' , ()=>{
+    newCookie('nom' ,  document.querySelector('#nomUtilisateur').value);
+    window.location.href = 'accueil.html';
+});
+window.onload = function() {
+    let nom = getCookie("nom");
+    let prenom = getCookie("prenom");
+    let jour = getCookie("jour");
+    let mois = getCookie("mois");
+    let annee = getCookie("annee");
+    let pseudo = getCookie("pseudo");
+    
+    document.querySelector("#nom").textContent = nom;
+    document.querySelector("#prenom").textContent = prenom;
+    document.querySelector("#dateNaissance").textContent = `${jour}/${mois}/${annee}`;
+    document.querySelector("#pseudo").textContent = pseudo;
+    
+    
+    let dateAnniversaire = new Date(annee, mois, jour);
+    let dateCourante = new Date();
+    dateAnniversaire.setFullYear(dateCourante.getFullYear());
+    
+    let joursRestants = 0;
+    if (dateAnniversaire > dateCourante) {
+        const diff = dateAnniversaire - dateCourante;
+       // joursRestants = Math.ceil(diff / (1000 * 60 * 60 * 24));
+    }
+    
+    document.querySelector("joursRestants").textContent = joursRestants;
+};
+
+
+// function nbJoursAnniv(_annee ,_mois ,_jour){
+//     let currentDate = new Date();
+//     let dateNaissance = new Date(_annee , _mois , _jour);
+
+//     let dateRestante
+
+// }
