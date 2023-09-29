@@ -35,17 +35,21 @@
                     </div>
                     <div>
                         <label for="jour">Jour</label>
-                        <select name="jour" id="jour"></select>
+                        <select name="jour" id="jour">
+                            <!-- <option value="0">Choisissez votre jour</option> -->
+                        </select>
 
                         <label for="mois">Mois</label>
-                        <select name="dateNaissance" id="mois"></select>
+                        <select name="mois" id="mois">
+                            <option value="0">Choisissez votre mois</option>
+                        </select>
 
                         <label for="annee">Année</label>
                         <input type="number" id="annee" name="annee" min="1900" max="2023" />
-                        
+
                     </div>
                     <div>
-                        
+
 
                     </div>
                     <div>
@@ -53,7 +57,7 @@
                     </div>
                     <div>
                         <label for="pseudo">Afficher votre pseudo</label>
-                        <input type="text" name="pseudo" id="pseudo" >
+                        <input type="text" name="pseudo" id="pseudo">
                     </div>
 
                     <input type="button" value="Validation" class="btn" id="valider">
