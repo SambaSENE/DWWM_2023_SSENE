@@ -1,18 +1,26 @@
-function createOptionJour() {
-    let uneOption = document.createElement('option');
-    uneOption.value = 0;
-    uneOption.text = "choisissez votre jour";
-    // document.querySelector("#jour").options[0] = uneOption;
-    document.querySelector("#jour").appendChild(uneOption);
+function afficheJour() {
+    let option = document.createElement('option');
+    option.value = 0;
+    option.text = "choisissez votre jour";
+    // document.querySelector("#jour").options[0] = option;
+    document.querySelector('#jour').appendChild(option);
+
     for (let i = 1; i < 32; i++) {
-        uneOption = document.createElement('option');
-        uneOption.value = i;
-        uneOption.text = i;
-        document.querySelector("#jour").options[i] = uneOption;
+        option = document.createElement('option');
+        option.value = i;
+        option.text = i;
+        document.querySelector('#jour').options[i]=option;
+
     }
 
 }
-createOptionJour();
+
+document.querySelector('#jour').addEventListener('blur', ()=>{
+
+    afficheJour();
+})
+    
+
 
 function createOptionMois() {
     let selectMois = document.querySelector('#mois');
@@ -31,7 +39,7 @@ function createOptionMois() {
 
         if (i === 2) {
             option.selected = true;
-            createOptionJour();
+        afficheJour();
         }
 
         selectMois.appendChild(option);
@@ -44,12 +52,12 @@ createOptionMois();
 function valNum(_champ) {
     let chaine = (document.getElementById(_champ).value).toUpperCase();
     var somme = 0;
-    console.log(chaine);
     for (let i = 0; i < chaine.length; i++) {
         let charCode = chaine.charCodeAt(i);
         somme += charCode - 64;
 
     }
+    // console.log(somme);
     return somme;
 }
 
@@ -59,9 +67,9 @@ document.querySelector('#nomUtilisateur').addEventListener('blur', () => {
 document.querySelector('#prenomUtilisateur').addEventListener('blur', () => {
     valNum('prenomUtilisateur');
 });
-//
 
-//
+
+
 function calculerSigne(_moisNaissance) {
 
     let chaine = '';
@@ -117,7 +125,7 @@ function calculerPseudo() {
         nom = valNum('nomUtilisateur');
         prenom = valNum('prenomUtilisateur');
 
-        let pseudo = signe + (nom + prenom);
+        let pseudo = signe + prenom + (nom + prenom);
         document.querySelector('#pseudo').value = pseudo;
 
 
@@ -135,20 +143,6 @@ document.querySelector('#prenomUtilisateur').addEventListener('blur', () => {
 document.querySelector('#mois').addEventListener('change', () => {
     calculerPseudo();
 });
-
-function newCookie(_nom, _value) {
-    let dateJour = new Date();
-    let dateExpire = new Date(dateJour.getFullYear(), dateJour.getMonth() + 1, dateJour.getDate());
-    dateExpire = dateExpire.toUTCString();
-
-    document.cookie = _nom + '=' + _value + '; expires = ' + dateExpire + '; SameSite = lax';
-}
-
-document.querySelector('#valider').addEventListener('click', () => {
-    newCookie('nom', document.querySelector('#nomUtilisateur').value);
-    window.location.href = 'accueil.html';
-});
-
 function nbJrsRestants(_jour, _mois, _annee) {
     let dateActu = new Date();
     let annviDate = new Date(dateActu.getUTCFullYear, _mois, _jour);
@@ -163,12 +157,17 @@ function nbJrsRestants(_jour, _mois, _annee) {
     return joursRestants;
 
 }
-let annee = document.querySelector('#annee').value;
-let mois = document.querySelector('#mois').value;
-let jour = document.querySelector('#jour').value;
+function newCookie(_nom, _value) {
+    let dateJour = new Date();
+    let dateExpire = new Date(Date.now() + 86400000); // en ms 86400000 =>24h
+    dateExpire = dateExpire.toUTCString();
 
-document.querySelector('#annee').addEventListener('change', () => {
-    nbJrsRestants(annee, mois, jour);
-})
+    document.cookie = _nom + '=' + _value + '; expires = ' + dateExpire + '; SameSite = lax';
+}
 
+document.querySelector('#valider').addEventListener('click', () => {
+    newCookie('nom', document.querySelector('#nomUtilisateur').value);
+    newCookie('prenom', document.querySelector('#prenomUtilisateur').value);
+    window.location.href = 'accueil.html';
+});
 
