@@ -45,7 +45,8 @@
                         </select>
 
                         <label for="annee">Année</label>
-                        <input type="number" id="annee" name="annee" min="1900" max="2023" />
+                        <select name="annee" id="annee">
+                            <option value="0">Choisissez votre année</option>
 
                     </div>
                     <div>
@@ -55,9 +56,9 @@
                     <div>
 
                     </div>
-                    <div>
+                    <édiv>
                         <label for="pseudo">Afficher votre pseudo</label>
-                        <input type="text" name="pseudo" id="pseudo">
+                        <input type="text" name="pseudo" id="pseudo" readonly>
                     </div>
 
                     <input type="button" value="Validation" class="btn" id="valider">
