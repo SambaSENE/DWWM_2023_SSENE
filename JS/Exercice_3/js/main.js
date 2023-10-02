@@ -2,8 +2,8 @@ function afficheJour() {
     let option = document.createElement('option');
     option.value = 0;
     option.text = "choisissez votre jour";
-    // document.querySelector("#jour").options[0] = option;
-    document.querySelector('#jour').appendChild(option);
+    document.querySelector("#jour").options[0] = option;
+    //document.querySelector('#jour').appendChild(option);
 
     for (let i = 1; i < 32; i++) {
         option = document.createElement('option');
