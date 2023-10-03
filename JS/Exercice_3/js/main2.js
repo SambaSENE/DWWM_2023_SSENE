@@ -155,20 +155,9 @@ document.querySelector('#prenomUtilisateur').addEventListener('blur', () => {
 document.querySelector('#mois').addEventListener('change', () => {
     calculerPseudo();
 });
-function nbJrsRestants(_jour, _mois, _annee) {
-    let dateActu = new Date();
-    let annviDate = new Date(dateActu.getUTCFullYear, _mois, _jour);
 
-    let diffTemps = annviDate - dateActu;
 
-    if (diffTemps < 0) {
-        annviDate = new Date(dateActu.getFullYear() + 1, _mois - 1, _jour);
-        diffTemps = annviDate - dateActu;
-    }
-    let joursRestants = Math.ceil(diffTemps / (1000 * 60 * 60 * 24));
-    return joursRestants;
 
-}
 function newCookie(_nom, _value) {
     let dateJour = new Date();
     let dateExpire = new Date(Date.now() + 86400000); // en ms 86400000 =>24h

@@ -14,7 +14,7 @@ function genererJoursDuMois() {
         let option = document.createElement('option');
         option.text = i;
         option.value = i;
-       document.querySelector('#jour').appendChild(option);
+        document.querySelector('#jour').appendChild(option);
         //·select.add(option);
         //document.querySelector('#jour').option[i]=option;
 
@@ -63,7 +63,14 @@ function genererAnnees() {
     }
 }
 genererAnnees();
+function newCookie(_nom, _value) {
+    let dateJour = new Date();
+    let dateExpire = new Date(Date.now() + 86400000); // en ms 86400000 =>24h
+    dateExpire = dateExpire.toUTCString();
 
+
+    document.cookie = _nom + '=' + _value + '; expires = ' + dateExpire + '; SameSite = lax';
+}
 function valNum(_champ) {
     let chaine = (document.querySelector('#' + _champ).value).toUpperCase();
 
@@ -88,7 +95,7 @@ function recupMois(_mois) {
 function verifierFormulaire() {
     let nomUtilisateur = document.querySelector('#nomUtilisateur').value;
     let prenomUtilisateur = document.querySelector('#prenomUtilisateur').value;
-    let anneeNaissance =  document.querySelector('#annee').value;
+    let anneeNaissance = document.querySelector('#annee').value;
     let moisNaissance = document.querySelector('#mois').value;
     let jour = document.querySelector('#jour').value;
 
@@ -124,14 +131,7 @@ function calculerPseudo() {
         let signe = calculerSigne(mois);
         nom = valNum('nomUtilisateur');
         prenom = valNum('prenomUtilisateur');
-
-
         let pseudo = signe + prenom + (nom + prenom);
-
-        //let compNom = document.querySelector('#nomUtilisateur').value;
-        //let compPrenom =  document.querySelector('#prenomUtilisteur').value;
-        // let composPseudo = 
-
         document.querySelector('#pseudo').value = pseudo;
         //console.log(pseudo)
     }
@@ -148,24 +148,17 @@ document.querySelector('#mois').addEventListener('change', () => {
     calculerPseudo();
 });
 
-function newCookie(_nom, _value) {
-    let dateJour = new Date();
-    let dateExpire = new Date(Date.now() + 86400000); // en ms 86400000 =>24h
-    dateExpire = dateExpire.toUTCString();
 
-
-    document.cookie = _nom + '=' + _value + '; expires = ' + dateExpire + '; SameSite = lax';
-}
 
 
 
 document.querySelector('#valider').addEventListener('click', () => {
     newCookie('nom', document.querySelector('#nomUtilisateur').value);
     newCookie('prenom', document.querySelector('#prenomUtilisateur').value);
-    newCookie('jourNaissance' , document.querySelector('#jour').value);
-    newCookie('moisNaissance' , document.querySelector('#mois').value);
-    newCookie('anneeNaissance' , document.querySelector('#annee').value);
-    
+    newCookie('jourNaissance', document.querySelector('#jour').value);
+    newCookie('moisNaissance', document.querySelector('#mois').value);
+    newCookie('anneeNaissance', document.querySelector('#annee').value);
+
     window.location.href = 'accueil.html';
 });
 
