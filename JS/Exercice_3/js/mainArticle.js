@@ -29,7 +29,7 @@ function verifierFormulaire() {
     }
 }
 function nbJrsRestants() {
-    let cookies = document.cookie.split(';');
+    //let cookies = document.cookie.split(';');
     let dateActu = new Date();
 
     let jourNaissance = parseInt(afficherCookies('jourNaissance'));
@@ -38,13 +38,27 @@ function nbJrsRestants() {
 
     let dateAnniv = new Date(anneeNaissance, moisNaissance - 1, jourNaissance);
 
-    if (dateAnniv < dateActu) {
-        dateAnniv.setFullYear(dateActu.getFullYear() + 1);
+    if (dateActu > dateAnniv)
+    {   
+        dateAnniv.setFullYear(dateActu.getFullYear());
+        diffTemps = dateAnniv-dateActu;
+        console.log('je suis ici');
+    }else if(dateActu < dateAnniv){
+        
+        dateAnniv.setFullYear(dateActu.getFullYear()+1);
+        diffTemps = dateAnniv - dateActu;
+        
+    }else if(dateActu == dateAnniv){
+        
+        dateAnniv.setFullYear(dateActu.getFullYear()-1);
+        diffTemps =  dateAnniv-dateActu;
+    }else{
+        diffTemps =  dateAnniv-dateActu;
+
     }
-    let diffTemps = dateAnniv - dateActu;
 
     // Convertir la différence en jours
-    let joursRestants = Math.floor(diffTemps / (1000 * 60 * 60 * 24));
+    let joursRestants = Math.ceil(diffTemps / (1000 * 60 * 60 * 24));
 
     return joursRestants;
 }
