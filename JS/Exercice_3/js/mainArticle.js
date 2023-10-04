@@ -17,7 +17,7 @@ function afficherCookies(_nom) {
 function verifierFormulaire() {
     let nomUtilisateur = document.querySelector('#nomUtilisateur').value;
     let prenomUtilisateur = document.querySelector('#prenomUtilisateur').value;
-    let anneeNaissance =  document.querySelector('#annee').value;
+    let anneeNaissance = document.querySelector('#annee').value;
     let moisNaissance = document.querySelector('#mois').value;
     let jour = document.querySelector('#jour').value;
 
@@ -37,23 +37,25 @@ function nbJrsRestants() {
     let anneeNaissance = parseInt(afficherCookies('anneeNaissance'));
 
     let dateAnniv = new Date(anneeNaissance, moisNaissance - 1, jourNaissance);
+    if (dateActu.getDate() == dateAnniv.getDate() && dateActu.getMonth() == dateAnniv.getMonth()) {
 
-    if (dateActu > dateAnniv)
-    {   
         dateAnniv.setFullYear(dateActu.getFullYear());
-        diffTemps = dateAnniv-dateActu;
-        console.log('je suis ici');
-    }else if(dateActu < dateAnniv){
-        
-        dateAnniv.setFullYear(dateActu.getFullYear()+1);
         diffTemps = dateAnniv - dateActu;
-        
-    }else if(dateActu == dateAnniv){
-        
-        dateAnniv.setFullYear(dateActu.getFullYear()-1);
-        diffTemps =  dateAnniv-dateActu;
-    }else{
-        diffTemps =  dateAnniv-dateActu;
+    }
+    else if (dateActu < dateAnniv) {
+
+        console.log('la');
+        dateAnniv.setFullYear(Math.abs(dateActu.getFullYear()));
+        diffTemps = dateAnniv - dateActu;
+
+    }
+    else if (dateActu > dateAnniv) {
+        dateAnniv.setFullYear(dateActu.getFullYear() + 1);
+        diffTemps = dateAnniv - dateActu;
+
+    }
+    else {
+        diffTemps = dateAnniv - dateActu;
 
     }
 
