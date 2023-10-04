@@ -1,2 +1,3 @@
-let  doc = document.querySelector("#app")
-doc.createElement("h1");
+window.addEventListener('scroll', ()=>{
+    console.log('scroll');
+})
