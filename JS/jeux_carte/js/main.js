@@ -1,34 +1,67 @@
-function addCell(tr, text) {
+// function  addCell(tr ,  text){
+//     let td = tr.insertCell();
+//     td.textContent = text;
+//     return td;
+// }
+// function titleCell(row ,  text){
+//     let cell = document.createElement('th');
+//     cell.textContent = text
+//     row.appendChild(cell);
+// }
 
-    let td = tr.insertCell();
-    td.textContent = text;
-    return td;
+// function createCell(row , object){
+//     for (const key in object) {
+//         addCell(row , object[key]);
+//     }
+// }
+
+
+// let newRow = document.createElement('tr');
+// let nomCell = document.createElement('td');
+// nomCell.textContent = 'Nom utilisateur';
+// let valeurCell = document.createElement('td');
+// valeurCell.textContent = afficherCookies('nom');
+// newRow.appendChild(nomCell);
+// newRow.appendChild(valeurCell);
+// document.querySelector('#cookieTable').appendChild(newRow);
+
+function createHead(row ,key) {
+    
+    let row = document.createElement('th');
+    cell.textContent = key;
+    row.appenChild(row)
+
 }
-function titleCell(row, text) {
-
-    let cell = document.createElement("th");
-    cell.textContent = text;
-    row.appendChild(cell);
+function createBody(row , value){
+    let cell = document.createElement('td');
+    row.textContent =  value;
+    cell.appendChild()
 }
-function createCells(row, objet) {
-    for (const key in objet) {
+// Je  cree une Ojbet XHR
 
-        addCell(row, objet[key]);
+let xhr = new XMLHttpRequest();
 
+// j'initialise la requte avec open()
+xhr.open("GET", "https://arfp.github.io/tp/web/html-css-js/02-cardgame/cardgame.json");
+
+// je convertis en formation JSON
+xhr.responseType = 'json';
+// envoie de la requete 
+xhr.send();
+// 
+
+// j'affiche des que la reponse est disponible
+xhr.onload = () => {
+    if (xhr.status != 200) {
+        console.log('Erreur' + xhr.status + xhr.statusText);
+    } else {
+        let container = xhr.response;
+
+        for (const key in container) {
+            console.log(container);
+           
+        }
+        // // fillTable(container);
     }
 }
-// Création d'une table
-let table = document.querySelector('#tableau');
 
-// Création de la ligne d'en-tête
-let headerRow = table.insertRow();
-titleCell(headerRow, "Colonne 1");
-titleCell(headerRow, "Colonne 2");
-
-// Création de la ligne de données
-let dataRow = table.insertRow();
-let dataObject = { col1: "Donnée 1", col2: "Donnée 2" };
-createCells(dataRow, dataObject);
-
-// Ajout de la table au corps du document
-document.querySelector('#tableau').appendChild(table);
