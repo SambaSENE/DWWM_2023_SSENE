@@ -1,83 +1,47 @@
-// function afficher(_prenom, _age) {
-//     _prenom = document.querySelector('#prenom').value;
-//     _age = document.querySelector('#age').value;
-//     let res = document.querySelector('#resultat');
-//     if (_prenom !== ' ' && _age >= 18) {
-//         res.innerHTML = 'Prenom ' + _prenom + ' Votre âge est ' + _age;
-//         res.innerHTML = 'Vous êtes majeur';
-
-//         console.log('Prenom ' + _prenom + ' Votre âge est ' + _age);
-        
-
-//     } else if (_prenom !== ' ' && _age > 0 && _age < 18) {
-
-
-//         res.innerHTML = 'Prenom ' + _prenom + ' Votre âge est ' + _age;
-//         res.innerHTML = 'Vous etes mineur'
-//     }
-
-//     else {
-
-//         res.innerHTML = 'Compléter/corriger le formulaire';
-//     }
-// }
-//  function calculerNbJoursRestant(_prenom ,_age){
-//     _age = document.querySelector('#age').value;
-//     _prenom = document.querySelector('#prenom').value;
-//     let res = document.querySelector('#resultat');
-
-//     if (_age == 64 ) {
-//       res.innerHTML = _prenom + ' Vous prenez votre retraite cette année !'
-//     }else if (_age> 64){
-//         let reste = _age - 64;
-//         res.innerHTML =  _prenom + ` vous etes à  la retraite depuis${reste} années`;
-//     }
-
-//  }
-
-// document.querySelector('#valider').addEventListener('click', () => {
-//     afficher('prenom', 'age');
-//     calculerNbJoursRestant('prenom' , 'age');
-// });
-
-const btnValider = document.getElementById('valider');
 const inputPrenom = document.getElementById('prenomUtilisateur');
 const inputAge = document.getElementById('ageUtilisateur');
+const btn = document.getElementById('valider');
 const resultat = document.getElementById('resultat');
-function direBonjour(_prenom){
-    _prenom = document.querySelector('#prenom').value;
-    res.innerHTML = `Bonjour ${_prenom}` ;
-
+const ageRetraite = 64;
+function verifieForm() {
+    return (inputPrenom.value.trim() !== '' && inputAge.value !== '');
 }
-function calculerMineurMajeur(_prenom , _age){
-    _prenom = document.querySelector('#prenomUtilisateur').value;
-    _age = document.querySelector('#ageUtilisateur').value;
 
-    if(_prenom !== '' && _age < 18){
-        res.innerHTML = `Vote âge ${_age}. vous êtes mineur`;
-    }else{
+function diteBonjour() {
+    return `Bonjour ${inputPrenom.value}, votre âge est ${inputAge.value} ,`
+}
+function estMajeur() {
+    if (inputAge.value > 18) {
+        return 'vous êtes majeur';
+    } else {
+
+        return 'vous êtes mineur';
+    }
+}
+function estALaRetraite() {
+   
+    let reste;
+    if (inputAge.value > ageRetraite) {
+
+        reste = inputAge.value - ageRetraite;
+        return `vous êtes à la retraite depuis ${reste} `;
+
+    } else if (inputAge.value < ageRetraite) {
         
-        res.innerHTML = `Vote âge ${_age}. vous êtes majeur`;
+        reste = ageRetraite - inputAge.value;
+        return` Il vous reste ${reste} avant la retraite`;
+
+    } else {
+        
+        return 'Vous prenez votre retraite cette année !';
     }
 }
 
-function calculerRestraite(_prenom , _age){
-    _prenom = document.querySelector('#prenom').value;
-    _age = document.querySelector('#age').value;
-    if (_prenom !== '' && _age == 64) {
 
-        res.innerHTML = `${_prenom} est deja à la retraite`;
-    } else if(_prenom !== '' && _age == 64){
-        let reste = _age - 64;
-        res.innerHTML =  _prenom + ` vous etes à  la retraite depuis ${reste} `
+document.addEventListener('click', () => {
+    if (verifieForm()) {
+        resultat.innerText = diteBonjour() + ' ' + estMajeur() + ' ' + estALaRetraite();
+    } else {
+        resultat.innerHTML = 'Compléter/corriger le formulaire';
     }
-
-}
-document.querySelector('#valider').addEventListener('click' , ()=>{
-    diteBonjour('prenomUtlisateur');
-    calculerMineurMajeur('prenom', 'age');
-    calculerRestraite('prenom' , 'age');
 })
-
-
-
