@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/main.js" defer></script>
+    <title>TP_formulaire</title>
+</head>
+<body>
+ 
+
+    <form method="post">
+        <h1>Saisissez un prenom et un âge</h1>
+        <fieldset>
+            <label for="prenomUtilisateur">Prénom :</label>
+            <input type="text" id="prenomUtilisateur" name="prenom" placeholder="Votre prénom">
+
+            <label for="ageUtilisateur">Âge :</label>
+            <input type="number" name="age" id="ageUtilisateur" min="0" max="100">
+
+            <button type="button" id="valider">Valider</button>
+            <button type="reset">Vider</button>
+            
+            <hr>
+        </fieldset>
+        <p id="resultat"></p>
+        
+    </form>
+</body>
+</html>
