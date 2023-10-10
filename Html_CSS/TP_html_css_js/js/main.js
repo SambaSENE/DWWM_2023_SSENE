@@ -3,15 +3,16 @@ const inputAge = document.getElementById('ageUtilisateur');
 const btn = document.getElementById('valider');
 const resultat = document.getElementById('resultat');
 const ageRetraite = 64;
+
 function verifieForm() {
     return (inputPrenom.value.trim() !== '' && inputAge.value !== '');
 }
 
 function diteBonjour() {
-    return `Bonjour ${inputPrenom.value}, votre âge est ${inputAge.value} ,`
+    return `Bonjour ${resultat.innerHTML = '<span>'+ inputPrenom.value.trim() + '</span>'}, votre âge est ${resultat.innerHTML = '<span>' + inputAge.value + '</span>'} ,`
 }
 function estMajeur() {
-    if (inputAge.value > 18) {
+    if (inputAge.value >= 18) {
         return 'vous êtes majeur';
     } else {
 
@@ -24,12 +25,12 @@ function estALaRetraite() {
     if (inputAge.value > ageRetraite) {
 
         reste = inputAge.value - ageRetraite;
-        return `vous êtes à la retraite depuis ${reste} `;
+        return `vous êtes à la retraite depuis ${resultat.innerHTML = '<span>'+ reste +'</span>'} an(s)`;
 
     } else if (inputAge.value < ageRetraite) {
         
         reste = ageRetraite - inputAge.value;
-        return` Il vous reste ${reste} avant la retraite`;
+        return` Il vous reste ${resultat.innerHTML = '<span>'+ reste + '</span>'} an(s) avant la retraite`;
 
     } else {
         
@@ -40,7 +41,7 @@ function estALaRetraite() {
 
 document.addEventListener('click', () => {
     if (verifieForm()) {
-        resultat.innerText = diteBonjour() + ' ' + estMajeur() + ' ' + estALaRetraite();
+        resultat.innerHTML = diteBonjour() + ' ' +  estMajeur() + ' ' + estALaRetraite();
     } else {
         resultat.innerHTML = 'Compléter/corriger le formulaire';
     }
