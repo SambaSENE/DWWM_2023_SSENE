@@ -1,0 +1,40 @@
+:root{
+    --parimay-color: rgb(0, 0, 255);
+}
+
+body{
+    width: 100vw;
+    font-family: Arial, Helvetica, sans-serif;
+}
+form{
+    border: 1px solid var(--parimay-color);
+    width: 70vw;
+    margin: 10px auto;
+    padding: 10px;
+
+}
+h1{
+    padding: 10px 0;
+    margin: 0;
+}
+
+input, button{
+    border: 1px solid var(--parimay-color);
+}
+label{
+    margin-right: 10px;
+}
+button{
+    display: inline-block;
+    margin: 0 10px 5px;
+    color: var(--parimay-color);
+    background-color: beige;
+}
+span{
+    color: var(--parimay-color);
+    font-weight: bold;
+    margin: 20px 0;
+}
+#resultat{
+   margin: 10px 0;
+}
