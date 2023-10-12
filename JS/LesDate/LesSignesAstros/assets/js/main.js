@@ -3,7 +3,7 @@ import { Signe } from "./mesClasses/Signe.js";
 const btnCaluler = document.getElementById('calculer');
 const dateNaissance = document.getElementById('dateNaissance');
 const resultat = document.getElementById('resultat');
-
+const zodiac = document.getElementById('signesZodiac');
 // Affichage
 
 document.getElementById('calculer').addEventListener('click', () => {
@@ -17,7 +17,10 @@ document.getElementById('calculer').addEventListener('click', () => {
         resultat.innerHTML += '<span>' + dayBirth.toLocaleTimeString('fr') + '</span>';
         resultat.innerHTML += '<br> le temps ecoulé ' +
             '<span>' + madate.dateIntervale() + '</span>' + ' années depuis votre naissance';
-        resultat.innerHTML += '<span' + signeZodiac.retournerSigne(dayBirth) + '</span>';
+
+
+
+        zodiac.innerHTML += 'Votre  signe astrologie : ' + '<span> ' + signeZodiac.getSigneZodiac() + ' </span> </br>'
 
     } else {
         resultat.innerHTML = "Veillez saisir une date dans le passé";
