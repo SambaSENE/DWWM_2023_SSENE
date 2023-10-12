@@ -12,7 +12,7 @@ class MaDate{
       * Retoune vrai si la date est inferieur aà la date actuelle
       * @returns {boolean} vrai si la date est dans le passé
       */
-    estDansLePasser()
+    estDansLePasse()
     {
         return this.dateCurrent > this.dateBirth;
     }

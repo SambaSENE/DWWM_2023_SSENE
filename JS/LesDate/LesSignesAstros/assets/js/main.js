@@ -10,7 +10,7 @@ document.getElementById('calculer').addEventListener('click', () => {
     let dayBirth = new Date(dateNaissance.value);
     let signeZodiac = new Signe(dateNaissance.value);
     let madate = new MaDate(dayBirth);
-    if (madate.estDansLePasser()) {
+    if (madate.estDansLePasse()) {
         resultat.innerHTML = 'Vous étes né le ';
         resultat.innerHTML += '<span>' + dayBirth.toLocaleDateString('fr') + '</span>';
         resultat.innerHTML += ' à ';

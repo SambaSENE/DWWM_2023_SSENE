@@ -1,77 +1,77 @@
 class Signe {
     constructor(_date) {
-        this.dateBirth = new Date();
+        this._date = new Date(_date);
         this.zodiac = ["Capricorne", "Verseau", "Poisson", "Bélier", "Taureau", "Gémeaux", "Cancer", "Lion", "Vierge", "Balance", "Scorpion", "Sagittaire"];
     }
-/**
- * retoune le jour du mois
- * @returns {Date} jour de de naissance
- */
+    /**
+     * retoune le jour du mois
+     * @returns {Date} jour de de naissance
+     */
     retournerJour() {
-       let  jour = this.dateBirth.getDate();
-        return jour;
+        return this._date.getDate();
     }
- /**
-  * retourne le mois de l'année de naissance
-  * @returns {Date} le mois de l'année de naissance
-  */
+    /**
+     * retourne le mois de l'année de naissance
+     * @returns {Date} le mois de l'année de naissance
+     */
     retournerMois() {
-        let mois = this.dateBirth.getMonth();
-        return mois;
+        return this._date.getMonth() + 1;
     }
-    
+
     /**
      * retourne une signe zodiac qui corresponde a la saisie
      * @returns {String} signe zodiac
      */
     getSigneZodiac() {
-        this.dateBirth;
-        switch (this.dateBirth) {
-            case this.retournerJour() >= 20 && this.retournerMois() === 1 || this.retournerJour() <= 18 && this.retournerMois() == 2: // VERSEAU
+
+        let jour = this.retournerJour();
+        let mois = this.retournerMois();
+        switch (this._date) {
+            case jour >= 20 && mois === 1 || jour <= 18 && mois == 2: // VERSEAU
                 return this.zodiac[1];
                 break;
 
-            case this.retournerJour() >= 19 && this.retournerMois() === 2 || this.retournerJour() <= 21 && this.retournerMois() == 3: // POISSONS
+            case jour >= 19 && mois === 2 || jour <= 21 && mois == 3: // POISSONS
                 return this.zodiac[2];
                 break;
-            case this.retournerJour() >= 20 && this.retournerMois() === 3 || this.retournerJour() <= 19 && this.retournerMois() == 4: // BELIER
+            case jour >= 20 && mois === 3 || jour <= 19 && mois == 4: // BELIER
                 return this.zodiac[3];
                 break
-            case this.retournerJour() >= 20 && this.retournerMois() === 4 || this.retournerJour() <= 20 && this.retournerMois() == 5: // TAUREAU
+            case jour >= 20 && mois === 4 || jour <= 20 && mois == 5: // TAUREAU
                 return this.zodiac[4];
                 break
-            case this.retournerJour() >= 21 && this.retournerMois() === 5 || this.retournerJour() <= 20 && this.retournerMois() == 6: // GEMEAUX
+            case jour >= 21 && mois === 5 || jour <= 20 && mois == 6: // GEMEAUX
                 return this.zodiac[5];
                 break
-            case this.retournerJour() >= 21 && this.retournerMois() === 6 || this.retournerJour() <= 22 && this.retournerMois() == 7: // CANCER
+            case jour >= 21 && mois === 6 || jour <= 22 && mois == 7: // CANCER
                 return this.zodiac[6];
                 break
-            case this.retournerJour() >= 23 && this.retournerMois() === 7 || this.retournerJour() <= 22 && this.retournerMois() == 8: // LION
+            case jour >= 23 && mois === 7 || jour <= 22 && mois == 8: // LION
                 return this.zodiac[7];
                 break
-            case this.retournerJour() >= 23 && this.retournerMois() === 8 || this.retournerJour() <= 22 && this.retournerMois() == 9: // VIERGE
+            case jour >= 23 && mois === 8 || jour <= 22 && mois == 9: // VIERGE
                 return this.zodiac[8];
                 break
-            case this.retournerJour() >= 23 && this.retournerMois() === 9 || this.retournerJour() <= 22 && this.retournerMois() == 10: // BALANCE //Bloc sur ce cas
-                console.log('je suis bloqué ici');
+            case jour >= 23 && mois === 9 || jour <= 22 && mois == 10: // BALANCE //Bloc sur ce cas
+                console.log('ici');
                 return this.zodiac[9];
                 break
-            case this.retournerJour() >= 23 && this.retournerMois() === 10 || this.retournerJour() <= 21 && this.retournerMois() == 11: // SCORPION
+            case jour >= 23 && mois === 10 || jour <= 21 && mois == 11: // SCORPION
                 return this.zodiac[10];
                 break
-            case this.retournerJour() >= 22 && this.retournerMois() === 11 || this.retournerJour() <= 21 && this.retournerMois() == 12: // SAGITTAIRE
+            case jour >= 22 && mois === 11 || jour <= 21 && mois == 12: // SAGITTAIRE
                 return this.zodiac[11];
                 break
-            case this.retournerJour() >= 22 && this.retournerMois() === 12 || this.retournerJour() <= 19 && this.retournerMois() == 1: // CAPRICORNE
+            case jour >= 22 && mois === 12 || jour <= 19 && mois == 1: // CAPRICORNE
                 return this.zodiac[0];
                 break
 
             default: 'NOT A FOUND'
                 break;
         }
-      
-        console.log(this.zodiac[1 , this.retournerMois()]);
-        return this.zodiac[] ;
+
+
+        return this.zodiac[jour, mois];
 
     }
 
