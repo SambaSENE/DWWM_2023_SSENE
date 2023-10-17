@@ -1,0 +1,31 @@
+:root{
+    --primary-color:  blue;
+    --secondary-color: beige;
+}
+body{
+    font-family: sans-serif;
+}
+main{
+    width: 70vw;
+    margin: 20px auto;
+    border: 1px solid var(--primary-color);
+    padding: 10px;
+}
+input , button{
+    height: 30px;
+    margin: 10px;
+    border: 1px solid var(--primary-color);
+}
+h1{
+    margin: 0;
+    padding: 5px 0;
+}
+button{
+    width: 150px;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+span{
+    font-weight: bold;
+    color: var(--primary-color);
+}

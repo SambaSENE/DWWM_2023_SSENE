@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Ma pompe</h1>
+    <div id="app">
+        <label>Prix du litre</label>
+        <input v-model="prix" type="number" :readonly="inputReadonly">
+
+        <p>Quantité <span>{{quantiteEnLitre}}</span></p>
+        <p>A payer <span>{{netAPayer}}</span></p>
+
+        <button @click="arreterCompter">Arreter</button>
+        <button @click="lancerCompter">Lancer</button>
+    </div>
+</body>
+
+</html>

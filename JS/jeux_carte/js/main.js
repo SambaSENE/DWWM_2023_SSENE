@@ -88,11 +88,8 @@ for (let i =0; i < tabData.length; i ++) {
 
 
 
-<<<<<<< Updated upstream
-
 
 xhr.send();
-=======
 // On crée un objet XMLHttpRequest XHR;
 
 let xhr=new XMLHttpRequest();

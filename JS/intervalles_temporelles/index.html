@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="./assets/js/main.js" type="module"></script>
+    <title>Intervalles temporelles</title>
+</head>
+<body>
+    <main>
+        <form >
+            <!-- <h1>Gestion des dates et intervalles</h1> -->
+            <label for="dateActu">Date actuelle :</label>
+            <input type="date" name="date" id="dateActu" readonly>
+
+            <label for="heureActu">Heure actuelle :</label>
+            <input type="time" name="heure" id="heureActu" readonly>
+
+            <button type="button" id="valider">Afficher date du jour</button>
+        </form>
+        <hr>
+
+
+        <div id="dateDuJour"></div>
+
+        <hr>
+        <form >
+            <!-- <h1>Selectionner une date et une heure</h1> -->
+            <label for="dateInter">Date :</label>
+            <input type="date" name="date" id="dateInter">
+            <button type="button" id="calculer">Calculer</button>
+        </form>
+
+        <div class="nbJoursInter"></div>
+
+    </main>
+
+
+</body>
+</html>
