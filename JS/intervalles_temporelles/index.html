@@ -12,15 +12,18 @@
         <form >
             <!-- <h1>Gestion des dates et intervalles</h1> -->
             <label for="dateActu">Date actuelle :</label>
-            <input type="date" name="date" id="dateActu">
+            <input type="date" name="date" id="dateActu" readonly>
 
             <label for="heureActu">Heure actuelle :</label>
-            <input type="time" name="heure" id="heureActu">
+            <input type="time" name="heure" id="heureActu" readonly>
 
             <button type="button" id="valider">Afficher date du jour</button>
         </form>
         <hr>
-        <div id="dateHeureJour"></div>
+
+
+        <div id="dateDuJour"></div>
+
         <hr>
         <form >
             <!-- <h1>Selectionner une date et une heure</h1> -->
@@ -28,8 +31,9 @@
             <input type="date" name="date" id="dateInter">
             <button type="button" id="calculer">Calculer</button>
         </form>
-        <hr>
-        <div id="dateIntervale"></div>
+
+        <div class="nbJoursInter"></div>
+
     </main>
 
 
