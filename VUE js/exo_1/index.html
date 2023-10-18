@@ -1,20 +1,45 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/main.js" type="module"></script>
-    <title>coucou  vue js</title>
+    <title>coucou vue js</title>
 </head>
-<body>
-    <table>
-        <thead>
 
-        </thead>
-        <tbody>
-            
-        </tbody>
-    </table>
+<body>
+    <div id="app">
+        <form action="">
+            <label>Prenom</label>
+            <input type="text" v-model="prenom">
+            <label>Age</label>
+            <input type="number" v-model="age">
+
+            <button>Valider</button>
+            <button>Vider</button>
+        </form>
+        <hr>
+        <p>{{prenom}}
+            <span v-if="age >=18 && age != ''">
+                {{age}} ans et vous êtes majeur
+            </span>
+            <span v-else-if="age <= 17 && age != '' ">
+                {{age}} vous êtes mineur
+            </span>
+            <span v-else="">
+                Veuillez saisir un champs 
+            </span>
+        </p>
+
+
+      
+      
+
+
+    </div>
 </body>
+
 </html>

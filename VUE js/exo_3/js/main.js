@@ -3,10 +3,12 @@ const app = Vue.createApp({
         return {
            prenom: '',
            age: '',
+           ageRetraite: 64
           
-            
-
-
+        }
+    }, computed:{
+        nbAnnee(){
+            return   (this.ageRetraite - this.age)
         }
     }
     

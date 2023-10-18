@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/main.js" type="module"></script>
+    <title>Retraite vue js</title>
+</head>
+
+<body>
+    <div id="app">
+        <form>
+            <label>Prénom :</label>
+            <input type="text" v-model="prenom">
+
+            <label >Âge :</label>
+            <input type="number" v-model="age">
+        </form>
+        <p v-if="prenom != '' && age != ''">bonjour {{prenom}}, <span>votre âge est : {{age}} ans</span></p>
+        <p v-else>Les champs sont obligatoire</p>
+        <div v-if="age >= ageRetraite">
+           
+            <p v-if="age== ageRetraite ">Vous prenez votre retraite cette année ! </p>
+            <p v-else-if="age>ageRetraite">
+                Vous êtes à la retraite depuis {{nbAnnee}} année(s)
+            </p>
+        </div>
+        <div v-else="">
+            Il vous reste {{nbAnnee}} année(s) avant la retraite
+        </div>
+
+    </div>
+</body>
+
+</html>
