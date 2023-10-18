@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/vue.global.js"></script>
+    <script src="./js/main.js" type="module"></script>
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Les dates 1</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Ma date de naissance</h1>
+        <form>
+            <label>Date de naissance :</label>
+            <input type="datetime-local" v-model="dateNaissance">
+            <button @click="btn">calculer</button>
+        </form>
+        <hr>
+        <p v-if="dateNaissance !== ''" >Vous êtes né le <span>{{ getDate}}</span>  à <span>{{ getHeure }}.</span></p>
+        <p v-else="">Les champs sont obligatoire</p>
+    </div>
+</body>
+</html>
