@@ -30,7 +30,6 @@ class Signe {
             case jour >= 20 && mois === 1 || jour <= 18 && mois === 2: // VERSEAU
                 return this.zodiac[1];
                 break;
-
             case jour >= 19 && mois === 2 || jour <= 21 && mois === 3: // POISSONS
                 return this.zodiac[2];
                 break;

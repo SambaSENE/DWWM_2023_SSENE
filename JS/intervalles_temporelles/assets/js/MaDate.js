@@ -46,4 +46,3 @@ class MaDate{
 }
 
 export { MaDate }
->>>>>>> Stashed changes

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +9,22 @@
     <link rel="stylesheet" href="./css/styles.css">
     <title>Les dates 1</title>
 </head>
+
 <body>
     <div id="app">
         <h1>Ma date de naissance</h1>
         <form>
             <label>Date de naissance :</label>
             <input type="datetime-local" v-model="dateNaissance">
-            <button @click="btn">calculer</button>
+            <button @click="clickBtn">calculer</button>
         </form>
         <hr>
-        <p v-if="dateNaissance !== ''" >Vous êtes né le <span>{{ getDate}}</span>  à <span>{{ getHeure }}.</span></p>
-        <p v-else="">Les champs sont obligatoire</p>
+        <div id="res" v-if="clickBtn && dateNaissance">
+            <p>Vous êtes né le <span>{{ getDate}}</span> à <span>{{ getHeure }}.</span></p>
+            <p>Les champs sont obligatoire</p>
+            <p>Vous avez <span>{{getResultat}} </span> an(s)</p>
+        </div>
     </div>
 </body>
+
 </html>

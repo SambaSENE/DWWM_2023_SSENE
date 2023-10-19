@@ -1,3 +1,4 @@
+import { Signe } from "./Signe.js"
 const { createApp } = Vue;
 const now = new Date();
 
@@ -5,6 +6,8 @@ const myApp = {
     data() {
         return {
             dateNaissance: null,
+            signe: []
+
         }
     },
     computed: {
@@ -21,15 +24,19 @@ const myApp = {
                 return heureNaiss.toLocaleTimeString();
             }
             return "";
+        },
+        getResultat() {
+
+            let diff = now.getFullYear() - (new Date(this.dateNaissance)).getFullYear();
+            return diff;
         }
+    },mounted:{
+        
     },
     methods: {
-        calculerNbAnnee() {
-            if (this.dateNaissance) {
-                let diff = now.getFullYear() - (new Date(this.dateNaissance)).getFullYear();
-                return diff;
-            }
-            return 0;
+        clickBtn() {
+            this.signe[dateNaissance]
+            
         }
     }
 }
