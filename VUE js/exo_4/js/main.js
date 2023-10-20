@@ -29,16 +29,11 @@ const myApp = {
 
             let diff = now.getFullYear() - (new Date(this.dateNaissance)).getFullYear();
             return diff;
-        }
-    },mounted:{
+        },
         
-    },
-    methods: {
-        clickBtn() {
-            this.signe[dateNaissance]
-            
-        }
+
     }
+    
 }
 
 createApp(myApp).mount("#app");

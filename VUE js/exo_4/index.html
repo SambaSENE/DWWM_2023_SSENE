@@ -16,14 +16,15 @@
         <form>
             <label>Date de naissance :</label>
             <input type="datetime-local" v-model="dateNaissance">
-            <button @click="clickBtn">calculer</button>
+            <button >calculer</button>
         </form>
         <hr>
-        <div id="res" v-if="clickBtn && dateNaissance">
+        <div v-if="dateNaissance">
             <p>Vous êtes né le <span>{{ getDate}}</span> à <span>{{ getHeure }}.</span></p>
-            <p>Les champs sont obligatoire</p>
             <p>Vous avez <span>{{getResultat}} </span> an(s)</p>
+            <!-- <p>{{getSigne}}</p> -->
         </div>
+        <p v-else>Les champs sont obligatoire</p>
     </div>
 </body>
 
