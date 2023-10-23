@@ -6,19 +6,28 @@ const { createApp } = Vue
 const app = createApp({
   data() {
     return {
-        cards: []
-    }
+      cards: [], // Assurez-vous que cards est initialisé en tant que tableau vide
+    };
   },
   async mounted() {
-    let json = await DbJson.fetchJson(apiURL);
-    
-    for (const item in json) {
-        let card = new Cereales(item);
-        this.cards.push(card)
-    }
+    try {
+      let json = await DbJson.fetchJson(apiURL);
 
-    console.log(this.cards);
-  }
-})
+      if (Array.isArray(json)) {
+        for (const item of json) {
+          let card = new Cereales(item);
+          this.cards.push(card);
+        }
+
+        console.log(this.cards);
+      } else {
+        console.error("Le JSON n'est pas un tableau d'objets.");
+      }
+    } catch (error) {
+      console.error("Erreur lors de la récupération des données JSON : ", error);
+    }
+  },
+});
+
 
 app.mount('#app')

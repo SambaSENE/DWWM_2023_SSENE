@@ -2,7 +2,7 @@ class Cereales
 {
    constructor(_cerealsFromJson)
    {
-        Object.entries(this , _cerealsFromJson);
+        Object.assign(this , _cerealsFromJson);
    }
 
    
