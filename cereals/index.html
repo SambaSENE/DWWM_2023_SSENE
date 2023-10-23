@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,44 @@
     <script src="./assets/js/main.js" type="module"></script>
     <title>Document</title>
 </head>
+
 <body>
     <div id="app">
+        <form>
+            <h1>Céréales</h1>
+            <div class="input_items">
+
+                <fieldset>
+                    <legend>Rechercher</legend>
+                    <input type="text" placeholder="Nom du céréale">
+                </fieldset>
+                <fieldset>
+                    <legend>Filter</legend>
+                    <legend>Nutriscore</legend>
+                    <label>A</label>
+                    <input type="checkbox">
+
+                    <label>C</label>
+                    <input type="checkbox">
+
+                    <label>D</label>
+                    <input type="checkbox">
+
+                    <label>E</label>
+                    <input type="checkbox">
+                </fieldset>
+            </div>
+
+            <fieldset>
+                <legend>Catégorie</legend>
+                <select>
+                    <option value="">Tous</option>
+                    <option value="sansSucre">Sans Sucre</option>
+                    <option value="pauvreEnSel">Pauvre en sel</option>
+                    <option value="Boost">Boost</option>
+                </select>
+            </fieldset>
+        </form>
         <table>
             <thead>
                 <tr>
@@ -28,7 +65,24 @@
                     <th>Del</th>
                 </tr>
             </thead>
+            <tbody>
+                <tr v-for="item of cards">
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.calories}}</td>
+                    <td>{{item.protein}}</td>
+                    <td>{{item.sodium}}</td>
+                    <td>{{item.fiber}}</td>
+                    <td>{{item.carbo}}</td>
+                    <td>{{item.sugar}}</td>
+                    <td>{{item.potass}}</td>
+                    <td>{{item.vitamins}}</td>
+                    <td>{{item.rating}}</td>
+                    <td>{{filter}}</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </body>
+
 </html>
