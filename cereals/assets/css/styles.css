@@ -10,11 +10,20 @@ html{
 }
 body{
     width: 100vw;
-    /* background-color: var(--color-background); */
-    /* color: var(--font-color); */
+    background-color: var(--color-background); 
+    color: var(--font-color); 
     font-size: 1.6rem;
     font-family: sans-serif, Arial, Helvetica;
 }
 fieldset{
     width: 200px;
+}
+th{
+    color: var(--primary-color);
+}
+tbody>tr:hover{
+    background-color: #664;
+}
+table{
+   
 }

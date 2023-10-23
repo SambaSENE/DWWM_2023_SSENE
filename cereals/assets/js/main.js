@@ -7,7 +7,11 @@ const app = createApp({
     data() {
         return {
             cards: [],
-
+            searchQuery: '',
+            selectedNutriScores: [],
+            noSugar: false,
+            lowSalt: false,
+            boost: false,
         };
     },
     async mounted() {
@@ -21,15 +25,34 @@ const app = createApp({
 
         }
     }, computed: {
-        filter() {
-            for (const item of this.cards) {
-                if (item.rating >= 80 && item.rating < 100) {
-                    return 'A'
-                }
-            }
-            return rating
-        }
+        // filteredCards() {
+        //     return this.cards.filter(card => {
+        //         const matchesNutriScore = this.selectedNutriScores.length === 0 || this.selectedNutriScores.includes(card.nutriScore);
+        //         const isNoSugar = this.noSugar ? card.sugar < 1 : true;
+        //         const isLowSalt = this.lowSalt ? card.salt < 50 : true;
+        //         const isBoost = this.boost ? (card.vitamins >= 25 && card.fibers >= 10) : true;
 
+
+        //         const matchesName = this.searchQuery.trim() === '' || card.name.toLowerCase().includes(this.searchQuery.toLowerCase());
+
+        //         return matchesNutriScore && (isNoSugar || isLowSalt || isBoost) && matchesName;
+        //     });
+        // }
+    }, methods: {
+        calculateNutriScore(rating) {
+            switch (true) {
+                case rating > 80:
+                    return 'A';
+                case rating >= 70 && rating <= 80:
+                    return 'B';
+                case rating >= 55 && rating < 70:
+                    return 'C';
+                case rating >= 35 && rating < 55:
+                    return 'D';
+                default:
+                    return 'E';
+            }
+        }
     }
 
 
