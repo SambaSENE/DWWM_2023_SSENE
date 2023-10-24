@@ -23,10 +23,20 @@
                 <fieldset>
                     <legend>Filter</legend>
                     <legend>Nutriscore</legend>
-                    <input type="checkbox" v-model="calculateNutriScore" value="A">
-                    <input type="checkbox" v-model="calculateNutriScore" value="B">
-                    <input type="checkbox" v-model="calculateNutriScore" value="C">
-                    <input type="checkbox" v-model="calculateNutriScore" value="E">
+                    <label for="">A</label>
+                    <input type="checkbox" v-model="checked">
+
+                    <label for="">B</label>
+                    <input type="checkbox" v-model="checked">
+
+                    <label for="">C</label>
+                    <input type="checkbox" v-model="checked">
+
+                    <label for="">D</label>
+                    <input type="checkbox" v-model="checked">
+
+                    <label for="">E</label>
+                   <input type="checkbox" v-model="checked">
                 </fieldset>
             </div>
 
@@ -71,7 +81,7 @@
                     <td>{{item.potass}}</td>
                     <td>{{item.vitamins}}</td>
                     <td>{{item.rating}}</td>
-                    <!-- <td>{{filter}}</td> -->
+                    <td>{{ calculerNutriScore }}</td>
                 </tr>
             </tbody>
         </table>

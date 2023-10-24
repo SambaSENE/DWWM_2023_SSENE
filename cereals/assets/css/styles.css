@@ -10,8 +10,8 @@ html{
 }
 body{
     width: 100vw;
-    background-color: var(--color-background); 
-    color: var(--font-color); 
+    /* background-color: var(--color-background); 
+    color: var(--font-color);  */
     font-size: 1.6rem;
     font-family: sans-serif, Arial, Helvetica;
 }
