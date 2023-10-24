@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.prod.js"></script>
+    <script src="main.js" type="module"></script>
+    <title>Céréales</title>
+</head>
+<body>
+    <div id="app">
+        <form>
+            <h1>Céréales</h1>
+            <div class="input_items">
+                <fieldset>
+                    <legend>Rechercher</legend>
+                    <input type="text" v-model="search" placeholder="Nom du céréale">
+                </fieldset>
+                <fieldset>
+                    <legend>Filter</legend>
+                    <legend>Nutriscore</legend>
+                    <label for="nutri-A">A</label>
+                    <input type="checkbox" id="nutri-A" v-model="selectedNutriScores" value="A">
+                    <label for="nutri-B">B</label>
+                    <input type="checkbox" id="nutri-B" v-model="selectedNutriScores" value="B">
+                    <label for="nutri-C">C</label>
+                    <input type="checkbox" id="nutri-C" v-model="selectedNutriScores" value="C">
+                    <label for="nutri-D">D</label>
+                    <input type="checkbox" id="nutri-D" v-model="selectedNutriScores" value="D">
+                    <label for="nutri-E">E</label>
+                    <input type="checkbox" id="nutri-E" v-model="selectedNutriScores" value="E">
+                </fieldset>
+                <fieldset>
+                    <legend>Catégorie</legend>
+                    <select v-model="selectedCategory">
+                        <option value="">Tous</option>
+                        <option value="sansSucre">Sans Sucre</option>
+                        <option value="pauvreEnSel">Pauvre en sel</option>
+                        <option value="Boost">Boost</option>
+                    </select>
+                </fieldset>
+            </div>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Calories</th>
+                    <th>Proteines</th>
+                    <th>Sel</th>
+                    <th>Fibres</th>
+                    <th>Glucides</th>
+                    <th>Sucre</th>
+                    <th>Potassium</th>
+                    <th>Vitamines</th>
+                    <th>Evaluation</th>
+                    <th>NS</th>
+                    <th>Del</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in filteredCards" :key="item.id">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.calories }}</td>
+                    <td>{{ item.proteins }}</td>
+                    <td>{{ item.sodium }}</td>
+                    <td>{{ item.fiber }}</td>
+                    <td>{{ item.carbohydrates }}</td>
+                    <td>{{ item.sugar }}</td>
+                    <td>{{ item.potassium }}</td>
+                    <td>{{ item.vitamins }}</td>
+                    <td>{{ item.rating }}</td>
+                    <td>{{ calculerNutriScore(item) }}</td>
+                    <td><button @click="removeCereal(item.id)">Supprimer</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="footer">
+            <div class="footer-item">Nombre de céréales affichées : {{ filteredCards.length }}</div>
+            <div class="footer-item">Moyenne des calories : {{ calculerMoyenneCalories() }}</div>
+        </div>
+    </div>
+</body>
+</html>

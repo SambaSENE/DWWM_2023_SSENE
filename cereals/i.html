@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste de Céréales</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Liste de Céréales</h1>
+
+        <input type="text" v-model="search" placeholder="Rechercher par nom">
+
+        <table>
+            <thead>
+                <tr>
+                    <th @click="sortTable('name')">Nom</th>
+                    <th @click="sortTable('calories')">Calories</th>
+                    <th @click="sortTable('nutriScore')">Nutri-Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="cereal in filteredCereals" :key="cereal.id">
+                    <td>{{ cereal.name }}</td>
+                    <td>{{ cereal.calories }}</td>
+                    <td>{{ cereal.nutriScore }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div v-if="filteredCereals.length === 0">Aucun résultat trouvé.</div>
+    </div>
+
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                cereals: [], // Vos données de céréales
+                search: '',
+                sortKey: 'name',
+                sortOrders: { name: 1, calories: 1, nutriScore: 1 }
+            },
+            created() {
+                // Ici, vous pouvez charger vos données depuis l'API et les stocker dans this.cereals.
+                // Pour cet exemple, nous utilisons des données statiques.
+                this.cereals = [
+                    { id: 1, name: 'Céréale A', calories: 150, nutriScore: 'A' },
+                    { id: 2, name: 'Céréale B', calories: 200, nutriScore: 'B' },
+                    { id: 3, name: 'Céréale C', calories: 120, nutriScore: 'C' },
+                ];
+            },
+            computed: {
+                filteredCereals() {
+                    return this.cereals.filter(cereal =>
+                        cereal.name.toLowerCase().includes(this.search.toLowerCase())
+                    ).sort(this.sortCereals);
+                }
+            },
+            methods: {
+                sortTable(key) {
+                    this.sortKey = key;
+                    this.sortOrders[key] = this.sortOrders[key] * -1;
+                },
+                sortCereals(a, b) {
+                    const order = this.sortOrders[this.sortKey];
+                    if (a[this.sortKey] > b[this.sortKey]) return order;
+                    if (a[this.sortKey] < b[this.sortKey]) return -order;
+                    return 0;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
