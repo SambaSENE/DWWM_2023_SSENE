@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/styles.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/js/main.js" type="module"></script>
@@ -35,7 +36,7 @@
                     <label>D</label>
                     <input type="checkbox" v-model="checked">
 
-                    <label for="">E</label>
+                    <label>E</label>
                    <input type="checkbox" v-model="checked">
                 </fieldset>
             </div>
@@ -81,7 +82,8 @@
                     <td>{{item.potass}}</td>
                     <td>{{item.vitamins}}</td>
                     <td>{{item.rating}}</td>
-                    <td>{{ calculerNutriScore }}</td>
+                    <td>{{ nutriScore }}</td>
+                    <td><i class="fa-solid fa-xmark"></i></td>
                 </tr>
             </tbody>
         </table>

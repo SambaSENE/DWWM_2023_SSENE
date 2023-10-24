@@ -8,6 +8,7 @@ const app = createApp({
         return {
             cards: [],
             checked: null,
+
         };
     },
     async mounted() {
@@ -21,20 +22,14 @@ const app = createApp({
 
         }
     },
-    computed : {
-        calculerNutriScore(){
-        
-        }  
-    }, 
-    methods: {
+    computed: {
        nutriScore(){
+    
+       }
+    },
+    methods: {
 
-       } 
-    }
-
-
-
-
+    }   
 });
 
 
