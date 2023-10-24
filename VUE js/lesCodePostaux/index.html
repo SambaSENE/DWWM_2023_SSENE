@@ -11,19 +11,31 @@
 
 <body>
     <div id="app">
-        <label for="codePostal">Choose a flavor:</label>
-        <input list="codePostal" id="ice-cream-choice" name="codePostal" />
+        <h1>Recherche de Villes par Code Postal</h1>
 
-        <datalist id="codePostal" >
-            <div class="cont" v-for="item of codePostal">
-                <option  value="item.codePostal">{{item}}</option>
-            </div>
+        <div id="search-form">
+            <label for="search">Entrez un code postal :</label>
+            <input type="search" v-model="codeCommune" list="cities" @input="updateSuggestions">
 
-            <button>Valider</button>
-        </datalist>
+            <datalist id="cities">
+                <option v-for="code in codePostaux" value="code.codePostal">{{ code.codePostal }}</option>
+                <option v-for="code of codePostaux" value="code.codeCommune">{{ code.nomCommune }}</option>
+                <option v-for="code of codePostaux" value="code.nomCommune">{{ code.nomCommune }}</option>
+            </datalist>
 
-        <div id="res">
+            <button @click="searchCity">Rechercher</button>
             
+        </div>
+
+        <div id="result">
+            <div v-if="selectedCity">
+                <p>Ville : {{ selectedCity.nomCommune }}</p>
+                <p>Code Postal : {{ selectedCity.codePostal }}</p>
+            </div>
+            <div v-else>
+                <p v-if="searchedCity">Aucune information disponible pour cette ville.</p>
+                <p v-else>Sélectionnez une ville dans la liste de suggestions.</p>
+            </div>
         </div>
     </div>
 </body>
