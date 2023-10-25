@@ -14,13 +14,12 @@
         <h1>Recherche de Villes par Code Postal</h1>
 
         <div id="search-form">
-            <label for="search">Entrez un code postal :</label>
+            <label for="cities">Entrez un code postal :</label>
             <input type="search" v-model="codeCommune" list="cities" @input="updateSuggestions">
 
-            <datalist id="cities">
-                <option v-for="code in codePostaux" value="code.codePostal">{{ code.codePostal }}</option>
-                <option v-for="code of codePostaux" value="code.codeCommune">{{ code.nomCommune }}</option>
-                <option v-for="code of codePostaux" value="code.nomCommune">{{ code.nomCommune }}</option>
+            <datalist id="cities" >
+                <option v-for="code of codePostaux" :value="code.codePostal">{{code.nomCommune}}</option>
+                
             </datalist>
 
             <button @click="searchCity">Rechercher</button>
@@ -28,9 +27,9 @@
         </div>
 
         <div id="result">
-            <div v-if="selectedCity">
-                <p>Ville : {{ selectedCity.nomCommune }}</p>
-                <p>Code Postal : {{ selectedCity.codePostal }}</p>
+            <div v-if="selectedCity" w>
+                <p>Ville : {{ code.nomCommune }}</p>
+                <p>Code Postal : {{ code.codePostal }}</p>
             </div>
             <div v-else>
                 <p v-if="searchedCity">Aucune information disponible pour cette ville.</p>
