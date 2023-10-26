@@ -3,11 +3,12 @@ class Employees {
         Object.assign(this, _employe);
     }
 
-    calculerEmail(_fullName)
-    {
-       let firstName =_fullName.split(' ');
-       let lastname = firstName[0];
-       return firstName + lastname + '@email.fr'; 
+    calculerEmail(_fullName) {
+        let fullNameArray = _fullName.split(' ');
+        let firstName = fullNameArray[0].toLowerCase();
+        let lastName = fullNameArray.slice(1).join('').toLowerCase();
+        return `${firstName[0]}.${lastName}@email.fr`;
+
     }
 }
-export { Employees , calculerEmail };
+export { Employees };

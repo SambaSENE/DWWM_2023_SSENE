@@ -18,7 +18,7 @@
                 <tr>
                     <th>EID</th>
                     <th>FULL Name</th>
-                    <!-- <th>Email</th> -->
+                    <th>Email</th>
                     <th>Monthly salary</th>
                     <th>Year of birth</th>
                     <th>Actions</th>
@@ -26,9 +26,10 @@
             </thead>
             <tbody >
                 <tr v-for="employe of employees">
+
                     <td>{{employe.id}}</td>
                     <td>{{employe.employee_name}}</td>
-                    <td>{{}}</td>
+                    <td>{{emailEmployees.email}}</td>
                     <td>{{employe.employee_salary}}</td>
                     <td>{{employe.employee_age}}</td>
                     <td>{{employe.profile_image}}</td>
