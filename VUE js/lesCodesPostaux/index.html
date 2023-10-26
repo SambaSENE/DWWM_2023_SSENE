@@ -27,10 +27,7 @@
         </div>
 
         <div id="result">
-            <div v-if="selectedCity" w>
-                <p>Ville : {{ code.nomCommune }}</p>
-                <p>Code Postal : {{ code.codePostal }}</p>
-            </div>
+            
             <div v-else>
                 <p v-if="searchedCity">Aucune information disponible pour cette ville.</p>
                 <p v-else>Sélectionnez une ville dans la liste de suggestions.</p>

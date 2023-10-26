@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/main.js" type="module"></script>
+    <title>exo 1</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Employees</h1>
+        <p>This is the current list of employees</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>EID</th>
+                    <th>FULL Name</th>
+                    <!-- <th>Email</th> -->
+                    <th>Monthly salary</th>
+                    <th>Year of birth</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr v-for="employe of employees">
+                    <td>{{employe.id}}</td>
+                    <td>{{employe.employee_name}}</td>
+                    <td>{{}}</td>
+                    <td>{{employe.employee_salary}}</td>
+                    <td>{{employe.employee_age}}</td>
+                    <td>{{employe.profile_image}}</td>
+                    <td>
+                        <button>Duplicate</button>
+                        <button>Delete</button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
