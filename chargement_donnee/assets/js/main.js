@@ -13,7 +13,7 @@ const myApp = {
     data() {
         return {
             employees: [],
-            emailEmployees: [],
+        
         }
     },
     async mounted() {
@@ -24,15 +24,9 @@ const myApp = {
             this.employees.push(employe);
             
         }
-        
-
-        for (const item of this.employees) {
-            let email = item.calculerEmail(item.employee_name);
-            this.emailEmployees.push(email);
-            //this.employees.push(email);
-        }
-        console.log(this.emailEmployees);
-
+    
+console.log(this.employees);
+       
         
     }, computed: {
 
