@@ -4,6 +4,7 @@ class Employees {
         Object.assign(this, _employe);
         this.email = this.calculerEmail(_employe.employee_name);
          this.salary = this.caculerSalaireMensuel(_employe.employee_salary);
+        //  this.salaryAll =  this.calculerSalairesTotaux();
     }
 
     calculerEmail(_fullName) {
@@ -15,7 +16,28 @@ class Employees {
     }
 
     caculerSalaireMensuel(_salary){
-        return (_salary / 12).toFixed(2)
+        let salary = ((_salary / 12).toFixed(2))
+        return (salary.split().sort()).toString();
     }
+     
+    calculerSalairesTotaux(_salary){
+        let salaire = _salary.split(',')
+        return salaire.reduce((accumulator , currentValue) => accumulator + currentValue , _salary);
+    }
+//     const array1 = [1, 2, 3, 4];
+
+// // 0 + 1 + 2 + 3 + 4
+// const initialValue = 0;
+// const sumWithInitial = array1.reduce(
+//   (accumulator, currentValue) => accumulator + currentValue,
+//   initialValue,
+// );
+
+// console.log(sumWithInitial);
+// Expected output: 10
+
+
+
+    
 }
 export { Employees };
