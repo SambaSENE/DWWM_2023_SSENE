@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/main.js" type="module"></script>
+    
+    <title> Evaluation </title>
+</head>
+
+<body>
+    <header>
+        <h1>Résulat de l'évluation</h1>
+    </header>
+    <div id="app">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="etudiant of etudiants">
+                    <td>{{etudiant.nom}}</td>
+                    <td>{{etudiant.prenom}}</td>
+                    <td>{{etudiant.grade}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <ul>
+            <li>Nombre d'étudiants: {{getNbEtudiants }}</li>
+            <li>Moyenne de la classe: {{ getMoyenne}} </li>
+            <li>Nombre d'étudiants au dessus de la moyenne :{{ getEtuMoyenne }} </li>
+        </ul>
+        <p></p>
+    </div>
+</body>
+
+</html>

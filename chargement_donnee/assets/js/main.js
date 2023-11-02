@@ -9,7 +9,8 @@ const myApp = {
     data() {
         return {
             employees: [],
-            totauxSalary: null,
+            totauxSalary: 0, 
+            
         }
     },
     async mounted() {
@@ -19,15 +20,9 @@ const myApp = {
             const employe = new Employees(data);
             this.employees.push(employe);
         }
+        console.log(this.employees[1]['employe_salary']);
 
-       
-        
-    },
-    computed: {
-        totalSalary() {
-            
-            return this.employees.reduce((total, employee) => total + employee.salary, );
-        }
+      
     }
 }
 
