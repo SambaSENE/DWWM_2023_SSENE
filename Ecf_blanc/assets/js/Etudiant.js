@@ -8,15 +8,18 @@ class Etudiant {
 
     getPrenom(_fullName) {
         let fullNameArray = _fullName.split(' ');
-        let prenom = fullNameArray[1].toLowerCase();
+        let prenom = fullNameArray[1];
         return prenom;
     }
     getNom(_fullName){
         let fullNameArray = _fullName.split(' ');
-        let nom = fullNameArray[0].toLowerCase();
+        let nom = fullNameArray[0];
         return nom;
     }
-
+    sortGrade(_grade){
+        let grade  = _grade.sort((a , b) => a - b);
+        return grade;
+    }
   
 }
 export { Etudiant }

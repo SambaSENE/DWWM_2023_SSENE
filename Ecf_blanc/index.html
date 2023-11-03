@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/js/main.js" type="module"></script>
-    
+
     <title> Evaluation </title>
 </head>
 
@@ -16,13 +16,26 @@
         <h1>Résulat de l'évluation</h1>
     </header>
     <div id="app">
+        <form>
+            <legend>Ajouter une note</legend>
+            <div>
+                <label>Nom Prénom : </label>
+                <input type="text" v-model="nomPrenom" placeholder="ajoute nom prénom">
+            </div>
+            <div>
+                <label>Note :</label>
+                <input type="number">
+            </div>
 
+            <button>Ajouter</button>
+        </form>
         <table>
             <thead>
                 <tr>
                     <th>Nom</th>
                     <th>Prenom</th>
                     <th>Note</th>
+                    <th>Obtenu</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,6 +43,8 @@
                     <td>{{etudiant.nom}}</td>
                     <td>{{etudiant.prenom}}</td>
                     <td>{{etudiant.grade}}</td>
+                    <td v-if="etudiant.grade >= noteEliminatoire">Oui</td>
+                    <td v-else>Non</td>
                 </tr>
             </tbody>
         </table>
@@ -37,8 +52,9 @@
             <li>Nombre d'étudiants: {{getNbEtudiants }}</li>
             <li>Moyenne de la classe: {{ getMoyenne}} </li>
             <li>Nombre d'étudiants au dessus de la moyenne :{{ getEtuMoyenne }} </li>
+            <li>Note éliminatoire : {{ noteEliminatoire }}</li>
         </ul>
-        <p></p>
+        <p>{{ nomPrenom }}</p>
     </div>
 </body>
 

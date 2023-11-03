@@ -11,6 +11,9 @@ const appEtudiant = {
             allGrade: [],
             notes: [],
             moyenneGrade: [],
+            noteEliminatoire: 12,
+            nomPrenom: ''
+            
         }
     },
     async mounted() {
@@ -27,14 +30,16 @@ const appEtudiant = {
         }
 
         for (const item of this.etudiants) {
-            
-            if(item.grade > this.getMoyenne){
+
+            if (item.grade > this.getMoyenne) {
 
                 this.moyenneGrade.push(item)
             }
-            
         }
-        console.log(this.moyenneGrade);
+       console.log(this.recupNom);
+       this.sortGrade()
+
+       console.log(this.nomPrenom);
     }, computed: {
 
         getNbEtudiants() {
@@ -50,9 +55,18 @@ const appEtudiant = {
             }
             return this.notes
 
-        }, 
-        getEtuMoyenne(){
+        },
+        getEtuMoyenne() {
             return this.moyenneGrade.length;
+        }
+    }, methods: {
+        sortGrade() {
+            
+            return this.etudiants.sort((a, b) => b.grade - a.grade);
+        },
+        recupNom(){
+            let nom = new Etudiant;
+            return getNom(nom);
         }
     }
 }
