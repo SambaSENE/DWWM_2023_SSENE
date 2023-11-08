@@ -27,9 +27,11 @@
                 <label>Note :</label>
                 <input type="number" v-model="newEtudiantGrade" min="0" max="20">
             </div>
-
-            <button @click="addNewEtudiant">Ajouter</button>
+            <div>
+                <button @click="addNewEtudiant">Ajouter</button>
+            </div>
         </form>
+
         <table>
             <thead>
                 <tr>
@@ -55,7 +57,7 @@
             <li>Nombre d'étudiants au dessus de la moyenne :{{ getEtuMoyenne }} </li>
             <li>Note éliminatoire : {{ noteEliminatoire }}</li>
         </ul>
-        <!-- <p>{{ nomPrenom }}</p> -->
+        <p>{{ newEtudiantNomPrenom}} {{newEtudiantGrade}}</p>
     </div>
 </body>
 

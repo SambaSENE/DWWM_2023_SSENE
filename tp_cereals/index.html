@@ -16,49 +16,52 @@
 <body>
     <div id="app">
         <main>
-            <section>
+            <section id="filter-bar">
                 <h1>Cereals</h1>
-                <form>
-                    <fieldset>
-                        <legend>Rechercher</legend>
-                        <input type="search">
-                    </fieldset>
-                </form>
-                <form>
-                    <fieldset>
-                        <legend>Nutriscore</legend>
-                        <label>A</label>
-                        <input type="checkbox">
-                        <label>B</label>
-                        <input type="checkbox">
-                        <label>C</label>
-                        <input type="checkbox">
-                        <label>D</label>
-                        <input type="checkbox">
-                        <label>E</label>
-                        <input type="checkbox">
-                    </fieldset>
-                </form>
+                <article>
+                    <form>
+                        <fieldset>
+                            <legend>Rechercher</legend>
+                            <input type="search">
+                        </fieldset>
+                   
+                    
+                        <fieldset>
+                            <legend>Nutriscore</legend>
+                            <label>A</label>
+                            <input type="checkbox">
+                            <label>B</label>
+                            <input type="checkbox">
+                            <label>C</label>
+                            <input type="checkbox">
+                            <label>D</label>
+                            <input type="checkbox">
+                            <label>E</label>
+                            <input type="checkbox">
+                        </fieldset>
+                    </form>
+                </article>
             </section>
             <table>
                 <thead>
-                    <tr>
-                        <th  >ID</th>	
-                        <th>Name</th>	
-                        <th >Calories</th>	
-                        <th>Protéïnes</th>	
-                        <th>Sel</th>	
-                        <th>Fibres</th>	
-                        <th>Glucides</th>	
-                        <th>Sucre</th>	
-                        <th>Potassium</th>	
-                        <th>Vitamines</th>	
+                    <tr id="title-head">
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Calories</th>
+                        <th>Protéïnes</th>
+                        <th>Sel</th>
+                        <th>Fibres</th>
+                        <th>Glucides</th>
+                        <th>Sucre</th>
+                        <th>Potassium</th>
+                        <th>Vitamines</th>
                         <th>Évaluation</th>
                         <th>NS</th>
+                        <th>DEL</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="cereal of cereals">
+                    <tr id="head title-body" v-for="cereal of cereals">
                         <td>{{ cereal.id }}</td>
                         <td>{{ cereal.name }}</td>
                         <td>{{ cereal.calories }}</td>
@@ -69,7 +72,14 @@
                         <td>{{ cereal.sugars }}</td>
                         <td>{{ cereal.potass }}</td>
                         <td>{{ cereal.vitamins }}</td>
-                        <td>{{ cereal.rating }}</td>             
+                        <td>{{ cereal.rating }}</td>
+                        <td v-if="cereal.rating < 35"><span>E</span></td>
+                        <td v-else-if="cereal.rating > 70 && cereal.rating < 80"><span>B</span></td>
+                        <td v-else-if="cereal.rating > 55 && cereal.rating < 70"><span>C</span></td>
+                        <td v-else-if="cereal.rating > 35 && cereal.rating < 55"><span>D</span></td>
+                        <td v-else><span>A</span></td>
+                        <td><button><i class="fa-solid fa-x"></i></button></td>
+
                     </tr>
                 </tbody>
             </table>

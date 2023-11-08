@@ -12,9 +12,9 @@ const appEtudiant = {
             notes: [],
             moyenneGrade: [],
             noteEliminatoire: 12,
-            newEtudiant: {},
             newEtudiantNomPrenom: '',
-            newEtudiantGrade: ''
+            newEtudiant: {},
+            newEtudiantGrade: 0,
 
         }
     },
@@ -38,11 +38,11 @@ const appEtudiant = {
                 this.moyenneGrade.push(item)
             }
         }
-        
+        const newNomPrenom = this.newEtudiantNomPrenom.split(' ')
+
+        console.log(newNomPrenom[0] , newNomPrenom[1]);
         this.sortGrade()
 
-
-        console.log(this.newEtudiantNomPrenom);
     }, computed: {
 
         getNbEtudiants() {
@@ -68,19 +68,12 @@ const appEtudiant = {
             return this.etudiants.sort((a, b) => b.grade - a.grade);
         },
         addNewEtudiant() {
-            const nomPrenomNewEtudiant = this.newEtudiantNomPrenom.split(' ');
-            const nom = nomPrenomNewEtudiant[0];
-            const prenom = nomPrenomNewEtudiant[1];
-            const grade = parseFloat(this.newEtudiantGrade);
 
-            if (nom.length > 2 && prenom.length > 2 && !isNaN(grade) && grade >= 0 && grade <= 20) {
-                this.newEtudiant = { nom, prenom, grade };
-                this.etudiants.push(this.newEtudiant);
+            
+            
+           
 
-                console.log(this.etudiants);
-            } else {
-                console.log('Erreur');
-            }
+            
         }
 
 
