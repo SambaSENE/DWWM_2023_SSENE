@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
+    <title>Cereals</title>
+</head>
+
+<body>
+    <div id="app">
+        <main>
+            <section>
+                <h1>Cereals</h1>
+                <form>
+                    <fieldset>
+                        <legend>Rechercher</legend>
+                        <input type="search">
+                    </fieldset>
+                </form>
+                <form>
+                    <fieldset>
+                        <legend>Nutriscore</legend>
+                        <label>A</label>
+                        <input type="checkbox">
+                        <label>B</label>
+                        <input type="checkbox">
+                        <label>C</label>
+                        <input type="checkbox">
+                        <label>D</label>
+                        <input type="checkbox">
+                        <label>E</label>
+                        <input type="checkbox">
+                    </fieldset>
+                </form>
+            </section>
+            <table>
+                <thead>
+                    <tr>
+                        <th  >ID</th>	
+                        <th>Name</th>	
+                        <th >Calories</th>	
+                        <th>Protéïnes</th>	
+                        <th>Sel</th>	
+                        <th>Fibres</th>	
+                        <th>Glucides</th>	
+                        <th>Sucre</th>	
+                        <th>Potassium</th>	
+                        <th>Vitamines</th>	
+                        <th>Évaluation</th>
+                        <th>NS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="cereal of cereals">
+                        <td>{{ cereal.id }}</td>
+                        <td>{{ cereal.name }}</td>
+                        <td>{{ cereal.calories }}</td>
+                        <td>{{ cereal.protein }}</td>
+                        <td>{{ cereal.sodium }}</td>
+                        <td>{{ cereal.fiber }}</td>
+                        <td>{{ cereal.carbo }}</td>
+                        <td>{{ cereal.sugars }}</td>
+                        <td>{{ cereal.potass }}</td>
+                        <td>{{ cereal.vitamins }}</td>
+                        <td>{{ cereal.rating }}</td>             
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+
+</html>
