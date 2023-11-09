@@ -57,7 +57,7 @@
                         <th data-attribut="vitamins" @click="sortCol">Vitamines</th>
                         <th data-attribut="rating" @click="sortCol">Évaluation</th>
                         <th data-attribut="ns" @click="sortCol">NS</th>
-                        <th >DEL</th>
+                        <th>DEL</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,12 +73,23 @@
                         <td>{{ cereal.potass }}</td>
                         <td>{{ cereal.vitamins }}</td>
                         <td>{{ cereal.rating }}</td>
-                        <td v-if="cereal.rating < 35"><span>E</span></td>
-                        <td v-else-if="cereal.rating > 70 && cereal.rating < 80"><span>B</span></td>
-                        <td v-else-if="cereal.rating > 55 && cereal.rating < 70"><span>C</span></td>
-                        <td v-else-if="cereal.rating > 35 && cereal.rating < 55"><span>D</span></td>
+                        <td v-if="cereal.rating < 35">
+                            <span>E</span>
+                        </td>
+                        <td v-else-if="cereal.rating > 70 && cereal.rating < 80">
+                            <span>B</span>
+                        </td>
+                        <td v-else-if="cereal.rating > 55 && cereal.rating < 70">
+                            <span>C</span>
+                        </td>
+                        <td v-else-if="cereal.rating > 35 && cereal.rating < 55">
+                            <span>D</span>
+                        </td>
                         <td v-else><span>A</span></td>
-                        <td><button :data-id="cereal.id" @click="deleteElement"><i class="fa-solid fa-x"></i></button></td>
+
+                        <td>
+                            <button :id="cereal.idCereal" @click="deleteElement(cereal.id)"><i class="fa-solid fa-x"></i></button>
+                        </td>
 
                     </tr>
                 </tbody>

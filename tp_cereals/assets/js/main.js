@@ -8,25 +8,17 @@ const myApp = {
         return {
             dataSouce: [],// données source
             cereals: [],// copie 
-            nutriscore: [],
-            arrayKey: [],
-            dataCol: [],
-
-
         }
     },
     async mounted() {
         const dataJson = await Db.fetchUrl(apiUrl);
         for (const data of dataJson.data) {
-            let newCereal = new Cereal(data)
-            this.cereals.push(newCereal);
-            this.cereals.push(newCereal);
-            this.nutriscore.push(Math.round(newCereal.rating));
+            let cereal = new Cereal(data)
+            this.dataSouce.push(cereal);
         }
-        for (const key in this.cereals[0]) {
-            this.arrayKey.push(key)
-        }
-        console.log(this.arrayKey);
+
+        this.cereals = { ...this.dataSouce }
+
         this.dataSouce.sort();
     }, methods: {
         sortCol(event) {
@@ -54,10 +46,32 @@ const myApp = {
                 })
             }
         },
-        deleteElement(event){
-            let id= event.target.dataset.cereal.id ;
-            this.cereals.filter((id) => this.cereals !== id);
+
+        //     Algorithme deleteElement(event)
+        //     // Récupérer l'ID de la céréale à supprimer depuis l'événement
+        //     id <- event.target.dataset.cereal.id
+
+        //     // Initialiser un nouveau tableau pour stocker les céréales filtrées
+        //     nouveauTableau <- tableauVide
+
+        //     // Parcourir chaque céréale dans le tableau existant
+        //     Pour chaque céréale dans this.cereals
+        //         // Vérifier si l'ID de la céréale correspond à l'ID à supprimer
+        //         Si céréale.id n'est pas égal à id
+        //             // Ajouter la céréale au nouveau tableau
+        //             Ajouter céréale à nouveauTableau
+        //         Fin Si
+        //     Fin Pour
+
+        //     // Remplacer le tableau existant par le nouveau tableau filtré
+        //     this.cereals <- nouveauTableau
+        // Fin Algorithme 
+
+        deleteElement(event) {
+            // const id = event.target.dataset.cereal.id;
+            // this.cereals = this.cereals.filter((cereal) => cereal.id !== id);
         }
+
     }
 }
 createApp(myApp).mount('#app');
