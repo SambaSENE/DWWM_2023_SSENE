@@ -24,8 +24,8 @@
                             <legend>Rechercher</legend>
                             <input type="search">
                         </fieldset>
-                   
-                    
+
+
                         <fieldset>
                             <legend>Nutriscore</legend>
                             <label>A</label>
@@ -44,20 +44,20 @@
             </section>
             <table>
                 <thead>
-                    <tr id="title-head">
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Calories</th>
-                        <th>Protéïnes</th>
-                        <th>Sel</th>
-                        <th>Fibres</th>
-                        <th>Glucides</th>
-                        <th>Sucre</th>
-                        <th>Potassium</th>
-                        <th>Vitamines</th>
-                        <th>Évaluation</th>
-                        <th>NS</th>
-                        <th>DEL</th>
+                    <tr>
+                        <th data-attribut="id" @click="sortCol">ID</th>
+                        <th data-attribut="name" @click="sortCol">Name</th>
+                        <th data-attribut="calories" @click="sortCol">Calories</th>
+                        <th data-attribut="protein" @click="sortCol">Protéïnes</th>
+                        <th data-attribut="sodium" @click="sortCol">Sel</th>
+                        <th data-attribut="fiber" @click="sortCol">Fibres</th>
+                        <th data-attribut="carbo" @click="sortCol">Glucides</th>
+                        <th data-attribut="sugar" @click="sortCol">Sucre</th>
+                        <th data-attribut="potass" @click="sortCol">Potassium</th>
+                        <th data-attribut="vitamins" @click="sortCol">Vitamines</th>
+                        <th data-attribut="rating" @click="sortCol">Évaluation</th>
+                        <th data-attribut="ns" @click="sortCol">NS</th>
+                        <th >DEL</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -78,7 +78,7 @@
                         <td v-else-if="cereal.rating > 55 && cereal.rating < 70"><span>C</span></td>
                         <td v-else-if="cereal.rating > 35 && cereal.rating < 55"><span>D</span></td>
                         <td v-else><span>A</span></td>
-                        <td><button><i class="fa-solid fa-x"></i></button></td>
+                        <td><button :data-id="cereal.id" @click="deleteElement"><i class="fa-solid fa-x"></i></button></td>
 
                     </tr>
                 </tbody>
