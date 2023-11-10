@@ -8,6 +8,9 @@ const myApp = {
         return {
             dataSouce: [],// données source
             cereals: [],// copie 
+            asc: true,
+            search: '',
+
         }
     },
     async mounted() {
@@ -17,12 +20,12 @@ const myApp = {
             this.dataSouce.push(cereal);
         }
 
-        this.cereals = { ...this.dataSouce }
+        this.cereals = [...this.dataSouce]
 
         this.dataSouce.sort();
     }, methods: {
         sortCol(event) {
-            let attribut = event.target.dataset.attribut;
+            let attribut = event.target.attribut;
             if (attribut) {
 
                 this.cereals.sort((a, b) => {
@@ -31,47 +34,24 @@ const myApp = {
                     }
                     else if (a[attribut] < b[attribut]) {
                         return -1;
+                    }else {
+                        return 0;
                     }
-                    return 0;
-                }).reverse()
-            } else {
-                this.cereals.sort((a, b) => {
-                    if (a[attribut] > b[attribut]) {
-                        return 1;
-                    }
-                    else if (a[attribut] < b[attribut]) {
-                        return -1;
-                    }
-                    return 0;
                 })
-            }
+                
+            } 
         },
-
-        //     Algorithme deleteElement(event)
-        //     // Récupérer l'ID de la céréale à supprimer depuis l'événement
-        //     id <- event.target.dataset.cereal.id
-
-        //     // Initialiser un nouveau tableau pour stocker les céréales filtrées
-        //     nouveauTableau <- tableauVide
-
-        //     // Parcourir chaque céréale dans le tableau existant
-        //     Pour chaque céréale dans this.cereals
-        //         // Vérifier si l'ID de la céréale correspond à l'ID à supprimer
-        //         Si céréale.id n'est pas égal à id
-        //             // Ajouter la céréale au nouveau tableau
-        //             Ajouter céréale à nouveauTableau
-        //         Fin Si
-        //     Fin Pour
-
-        //     // Remplacer le tableau existant par le nouveau tableau filtré
-        //     this.cereals <- nouveauTableau
-        // Fin Algorithme 
-
         deleteElement(event) {
-            // const id = event.target.dataset.cereal.id;
-            // this.cereals = this.cereals.filter((cereal) => cereal.id !== id);
+            const idCereal = event.target.dataset.id;
+            this.cereals = this.cereals.filter(cereal => cereal.id != idCereal);
+        },
+        searchCereals() {
+            // this.cereals = this.cereals.find(cereal => )
         }
-
+    }, computed: {
+        averageCalories() {
+            const total = this.cereals.reduce((currentValue, acumulator) => currentValue + acumulator, 0)
+        }
     }
 }
 createApp(myApp).mount('#app');

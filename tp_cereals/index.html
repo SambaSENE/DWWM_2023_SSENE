@@ -22,9 +22,9 @@
                     <form>
                         <fieldset>
                             <legend>Rechercher</legend>
-                            <input type="search">
+                            <input type="search" v-model="search" >
                         </fieldset>
-
+                        {{search}}
 
                         <fieldset>
                             <legend>Nutriscore</legend>
@@ -61,7 +61,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr id="head title-body" v-for="cereal of cereals">
+                    <tr id="head" v-for="cereal of cereals">
                         <td>{{ cereal.id }}</td>
                         <td>{{ cereal.name }}</td>
                         <td>{{ cereal.calories }}</td>
@@ -88,11 +88,14 @@
                         <td v-else><span>A</span></td>
 
                         <td>
-                            <button :id="cereal.idCereal" @click="deleteElement(cereal.id)"><i class="fa-solid fa-x"></i></button>
+                            <a href="#" :data-id="cereal.id" @click="deleteElement"> X </a>
                         </td>
 
                     </tr>
                 </tbody>
+                <tfoot>
+                    <tr>{{averageCalories}}</tr>
+                </tfoot>
             </table>
         </main>
     </div>
