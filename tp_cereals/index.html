@@ -22,9 +22,9 @@
                     <form>
                         <fieldset>
                             <legend>Rechercher</legend>
-                            <input type="search" v-model="search" >
+                            <input type="search" v-model="searchCereals" @change="searchEvent">
                         </fieldset>
-                        {{search}}
+                        
 
                         <fieldset>
                             <legend>Nutriscore</legend>
@@ -45,18 +45,18 @@
             <table>
                 <thead>
                     <tr>
-                        <th data-attribut="id" @click="sortCol">ID</th>
-                        <th data-attribut="name" @click="sortCol">Name</th>
-                        <th data-attribut="calories" @click="sortCol">Calories</th>
-                        <th data-attribut="protein" @click="sortCol">Protéïnes</th>
-                        <th data-attribut="sodium" @click="sortCol">Sel</th>
-                        <th data-attribut="fiber" @click="sortCol">Fibres</th>
-                        <th data-attribut="carbo" @click="sortCol">Glucides</th>
-                        <th data-attribut="sugar" @click="sortCol">Sucre</th>
-                        <th data-attribut="potass" @click="sortCol">Potassium</th>
-                        <th data-attribut="vitamins" @click="sortCol">Vitamines</th>
-                        <th data-attribut="rating" @click="sortCol">Évaluation</th>
-                        <th data-attribut="ns" @click="sortCol">NS</th>
+                        <th id="id" @click="sortCol">ID</th>
+                        <th id="name" @click="sortCol">Name</th>
+                        <th id="calories" @click="sortCol">Calories</th>
+                        <th id="protein" @click="sortCol">Protéïnes</th>
+                        <th id="sodium" @click="sortCol">Sel</th>
+                        <th id="fiber" @click="sortCol">Fibres</th>
+                        <th id="carbo" @click="sortCol">Glucides</th>
+                        <th id="sugar" @click="sortCol">Sucre</th>
+                        <th id="potass" @click="sortCol">Potassium</th>
+                        <th id="vitamins" @click="sortCol">Vitamines</th>
+                        <th id="rating" @click="sortCol">Évaluation</th>
+                        <th id="ns" @click="sortCol">NS</th>
                         <th>DEL</th>
                     </tr>
                 </thead>
@@ -73,19 +73,9 @@
                         <td>{{ cereal.potass }}</td>
                         <td>{{ cereal.vitamins }}</td>
                         <td>{{ cereal.rating }}</td>
-                        <td v-if="cereal.rating < 35">
-                            <span>E</span>
+                        <td>
+                            <span>{{cereal.ns}}</span>
                         </td>
-                        <td v-else-if="cereal.rating > 70 && cereal.rating < 80">
-                            <span>B</span>
-                        </td>
-                        <td v-else-if="cereal.rating > 55 && cereal.rating < 70">
-                            <span>C</span>
-                        </td>
-                        <td v-else-if="cereal.rating > 35 && cereal.rating < 55">
-                            <span>D</span>
-                        </td>
-                        <td v-else><span>A</span></td>
 
                         <td>
                             <a href="#" :data-id="cereal.id" @click="deleteElement"> X </a>
@@ -94,7 +84,8 @@
                     </tr>
                 </tbody>
                 <tfoot>
-                    <tr>{{averageCalories}}</tr>
+                    <td>{{ nbElement }} elements</td>
+                    <td>{{ averageCalories }}</td>
                 </tfoot>
             </table>
         </main>
