@@ -29,16 +29,18 @@
                         <fieldset>
                             <legend>Nutriscore</legend>
                             <label>A</label>
-                            <input type="checkbox">
+                            <input type="checkbox"  v-model="checked">
                             <label>B</label>
-                            <input type="checkbox">
+                            <input type="checkbox"  v-model="checked">
                             <label>C</label>
-                            <input type="checkbox">
+                            <input type="checkbox"  v-model="checked">
                             <label>D</label>
-                            <input type="checkbox">
+                            <input type="checkbox"  v-model="checked">
                             <label>E</label>
-                            <input type="checkbox">
+                            <input type="checkbox"  v-model="checked">
                         </fieldset>
+
+                        {{checked}}
                     </form>
                 </article>
             </section>

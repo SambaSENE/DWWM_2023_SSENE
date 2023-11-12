@@ -11,6 +11,7 @@ const myApp = {
             caloriesColumn: [],
             asc: true,
             searchCereals: '',
+            checked: [],
         }
     },
     async mounted() {
@@ -22,7 +23,7 @@ const myApp = {
         this.dataSouce.sort();
 
         this.cereals = [...this.dataSouce];
-        console.log(this.cereals);
+        // console.log(this.cereals);
         for (const item of this.cereals) {
             let elementInt = parseInt(item.calories);
             this.caloriesColumn.push(elementInt)
