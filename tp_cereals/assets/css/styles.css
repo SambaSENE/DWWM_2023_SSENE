@@ -16,3 +16,69 @@
     --color6: #CC0000CC;
 
 }
+body{
+    font-family: sans-serif;
+}
+main{
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#filter-bar{
+    display: flex;
+    justify-content: space-between;
+}
+#filter-bar  > h1{
+    font-size: 4rem;
+    padding: 10px 150px;
+    margin: 0;
+}
+form{
+    display: flex;
+
+}
+fieldset{
+    width: 200px;
+}
+.A{
+    background-color: var(--color10);
+
+}
+.B{
+    background-color: var(--color11);
+
+}
+.C{
+    background-color: var(--color12);
+}
+.D{
+    background-color: var(--color);
+}
+.E{
+    background-color: var(--color6);
+}
+.A ,.B , .C , .D , .E{
+    width: 40px;
+    
+    display: inline-block;
+    text-align: center;
+    padding: 5px 0;
+}
+table {
+    width: 100%;
+    margin-top: 40px;
+}
+
+td > a{
+    width: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--color6);
+    font-size: 1rem;
+    border: 1px solid;
+    display: block;
+    text-align: center;
+    padding: 3px ;
+}
+

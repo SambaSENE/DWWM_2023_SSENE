@@ -20,27 +20,50 @@
                 <h1>Cereals</h1>
                 <article>
                     <form>
-                        <fieldset>
-                            <legend>Rechercher</legend>
-                            <input type="search" v-model="searchCereals" @change="searchEvent">
-                        </fieldset>
                         
-
+                        
                         <fieldset>
-                            <legend>Nutriscore</legend>
-                            <label>A</label>
-                            <input type="checkbox"  v-model="checked">
-                            <label>B</label>
-                            <input type="checkbox"  v-model="checked">
-                            <label>C</label>
-                            <input type="checkbox"  v-model="checked">
-                            <label>D</label>
-                            <input type="checkbox"  v-model="checked">
-                            <label>E</label>
-                            <input type="checkbox"  v-model="checked">
-                        </fieldset>
+                                <legend>Rechercher</legend>
+                                <input type="search" v-model="searchCereals" @change="searchEvent" placeholder="Nom du céréale">
+                            </fieldset>
+                    
 
-                        {{checked}}
+                            <fieldset>
+                                <legend>Filter</legend>
+    
+                                <fieldset>
+                                    <legend>nutri Score</legend>
+                                    <label>A</label>
+                                    <input @change="nutriScore" type="checkbox" value="A" v-model="checked">
+                                    
+                                    <label>B</label>
+                                    <input @change="nutriScore" type="checkbox" value="B" v-model="checked">
+                                    
+                                    <label>C</label>
+                                    <input @change="nutriScore" type="checkbox" value="C" v-model="checked">
+                                    
+                                    <label>D</label>
+                                    <input @change="nutriScore" type="checkbox" value="D" v-model="checked">
+                                    
+                                    <label>E</label>
+                                    <input @change="nutriScore" type="checkbox" value="E" v-model="checked">
+                                </fieldset>
+                            </fieldset>
+                       
+
+                   
+
+                            <fieldset>
+                                <legend>Catégorie</legend>
+                                <select name="" @change="selectMultiCriter" id="categories" v-model="categories">
+                                    <option value="all">Tous</option>
+                                    <option value="noSugar">Sans  sucre</option>
+                                    <option value="poorSalt">Pauvre en sel</option>
+                                    <option value="boost">Boost</option>
+                                </select>
+                            </fieldset>
+                        
+                        <!-- {{ categories }} -->
                     </form>
                 </article>
             </section>
@@ -76,7 +99,7 @@
                         <td>{{ cereal.vitamins }}</td>
                         <td>{{ cereal.rating }}</td>
                         <td>
-                            <span>{{cereal.ns}}</span>
+                            <span :class="cereal.ns">{{cereal.ns}}</span>
                         </td>
 
                         <td>
