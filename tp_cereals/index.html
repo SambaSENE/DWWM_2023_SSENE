@@ -20,17 +20,12 @@
                 <h1>Cereals</h1>
                 <article>
                     <form>
-                        
-                        
                         <fieldset>
                                 <legend>Rechercher</legend>
                                 <input type="search" v-model="searchCereals" @change="searchEvent" placeholder="Nom du céréale">
                             </fieldset>
-                    
-
                             <fieldset>
                                 <legend>Filter</legend>
-    
                                 <fieldset>
                                     <legend>nutri Score</legend>
                                     <label>A</label>
@@ -49,10 +44,6 @@
                                     <input @change="nutriScore" type="checkbox" value="E" v-model="checked">
                                 </fieldset>
                             </fieldset>
-                       
-
-                   
-
                             <fieldset>
                                 <legend>Catégorie</legend>
                                 <select name="" @change="selectMultiCriter" id="categories" v-model="categories">
