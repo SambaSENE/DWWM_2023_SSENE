@@ -42,19 +42,7 @@ const myApp = {
     }
 
     , methods: {
-        /**
-         * function recherche muli-criteres
-         *      Si this.categories == 'sugar' alors
-         *         this.cereals = filtre this.dataSource sugar < 1 ;
-         *       Sinon si this.catergorie == poorSalt alors 
-         *          this.cereals = filtre this.dataSource salt < 50
-         *      sinon si this.categories == boost 
-         *          this.cereals = this.filtre dataSource vitamin >= 25 + fibre >= 10
-         *      sinon 
-         *          this.cereals     
-         * fin Si
-         * fin function
-         */
+       
         selectMultiCriter(){
             if(this.nutriScore){
                 if(this.categories == 'noSugar'){

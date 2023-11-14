@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/main.js" type="module"></script>
+    <title>Champions league</title>
+</head>
+
+<body>
+    <div id="app">
+        <main>
+            <article>
+                <input type="search" v-model="searchMatch">
+                
+            </article>
+            <table>
+                <thead>
+                    <tr>
+                        <th id="home" @click="sortColumn">Home</th>
+                        <th id="away" @click="sortColumn">Away</th>
+                        <th id="score" @click="sortColumn">Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="match of saison">
+                        <td>{{ match.HomeTeam}}</td>
+                        <td>{{match.AwayTeam}}</td>
+                        <td>{{match.HomeTeamScore}} {{match.AwayTeamScore}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+
+</html>
