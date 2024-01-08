@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats du tournoi de Football</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/main.js" type="module"></script>
+</head>
+<body>
+    <div id="appFootball">
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Equipe 1</th>
+                    <th>Equipe 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="match of matchFooballAller">
+                    <td>{{ match.team1 }}</td>
+                    <td>{{ match.team2 }}</td>
+                    <td>{{ match.scoreAller }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
